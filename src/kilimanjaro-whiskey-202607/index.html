@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>非洲之巅·乞力马扎罗威士忌线 8日</title>
+<style>
+:root{
+  --bg:#0f1419;--card:#1a2332;--ink:#e8edf4;--muted:#8b9cb3;
+  --accent:#2dd4a8;--accent-dim:#1a6b5a;--gold:#f0b429;--line:#2e3d52;
+  --warn:#f0b429;--shadow:0 4px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6;font-size:15px}
+a{color:var(--ink);text-decoration:none}
+a:hover{color:#fff;text-decoration:underline}
+.wrap{max-width:1040px;margin:0 auto;padding:24px 24px 48px}
+.hero{text-align:center;padding:24px 16px;margin-bottom:20px;
+  background:linear-gradient(160deg,#1a2a3a,#0f1419 60%);border-radius:20px;border:1px solid var(--line)}
+.hero .badge{display:inline-block;font-size:11px;padding:4px 10px;border-radius:20px;
+  background:rgba(45,212,168,.15);color:var(--accent);margin-bottom:10px}
+.hero h1{font-size:22px;font-weight:700;line-height:1.35}
+.hero .dest{color:var(--muted);font-size:14px;margin-top:8px}
+.banner{background:rgba(240,180,41,.12);border:1px solid rgba(240,180,41,.35);
+  color:var(--warn);padding:12px 14px;border-radius:12px;font-size:13px;margin-bottom:18px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
+@media(max-width:520px){.metrics{grid-template-columns:repeat(2,1fr)}}
+.metric{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center}
+.metric .num{font-size:18px;font-weight:700;color:var(--accent)}
+.metric .label{font-size:11px;color:var(--muted);margin-top:4px}
+.tabs{display:flex;gap:4px;margin-bottom:14px;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:7px 11px;border-radius:20px;font-size:12px;cursor:pointer;white-space:nowrap;flex-shrink:0;
+  background:var(--card);border:1px solid var(--line);color:var(--muted)}
+.tab.active{background:var(--accent-dim);border-color:var(--accent);color:#fff}
+.panel{display:none}
+.panel.active{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:14px}
+.card h3{font-size:15px;margin-bottom:12px;color:var(--accent)}
+.price-big{font-size:36px;font-weight:800;color:var(--gold)}
+.price-sub{font-size:12px;color:var(--muted);margin-top:4px}
+.cost-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px}
+.cost-table td{padding:10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.cost-table tr:last-child td{border-bottom:none}
+.cost-label{color:var(--muted);width:28%;white-space:nowrap;padding-right:12px}
+.cost-val{color:var(--ink);line-height:1.5}
+.tag{display:inline-block;font-size:11px;padding:4px 10px;border-radius:16px;
+  background:rgba(45,212,168,.12);color:var(--accent);margin:0 6px 6px 0}
+.muted-tag{background:#222d3d;color:var(--muted)}
+.day-card{border-left:3px solid var(--accent);padding:0 0 14px 14px;margin-bottom:14px}
+.day-head{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.day-num{font-size:13px;font-weight:700;color:var(--accent)}
+.day-date{font-size:12px;color:var(--gold);font-weight:600;white-space:nowrap}
+.day-title{font-size:15px;font-weight:600;flex:1;min-width:140px}
+.day-cal-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+@media(max-width:520px){.day-cal-row{grid-template-columns:repeat(2,1fr)}}
+.day-cal-cell{background:#222d3d;border-radius:8px;padding:8px 10px;font-size:11px;line-height:1.4}
+.day-cal-cell b{display:block;color:var(--accent);font-size:12px;margin-bottom:2px}
+.day-cal-cell .dc-date{color:var(--gold);font-weight:600}
+.day-cal-cell .dc-wk{color:var(--muted);font-size:10px}
+.day-acts{list-style:none;margin:0 0 8px 0;padding:0}
+.day-acts li{font-size:13px;color:var(--muted);padding:3px 0 3px 14px;position:relative}
+.day-acts li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:5px;
+  border-radius:50%;background:var(--accent);opacity:.7}
+.day-acts li.empty{font-style:italic;padding-left:0}
+.day-acts li.empty::before{display:none}
+.day-meta{display:flex;gap:16px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+ul.plain{list-style:none;padding:0}
+ul.plain li{font-size:13px;color:var(--muted);padding:6px 0;border-bottom:1px solid var(--line)}
+ul.plain li:last-child{border:none}
+ul.plain li.empty{font-style:italic}
+.muted{color:var(--muted);font-size:13px}
+.source{font-size:12px;color:var(--muted);margin-top:20px;padding-top:14px;border-top:1px solid var(--line)}
+.eval-card{background:#222d3d;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
+.eval-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.eval-title{font-weight:600}
+.eval-score{font-size:28px;font-weight:800;color:var(--gold)}
+.eval-score small{font-size:14px;color:var(--muted);font-weight:400}
+.eval-bars{display:flex;flex-wrap:wrap;gap:8px;font-size:11px;color:var(--muted);margin-bottom:8px}
+.eval-bars span{background:#1a2332;padding:3px 8px;border-radius:8px}
+.eval-verdict{font-size:13px;color:var(--ink);line-height:1.5}
+#route-map{height:440px;border-radius:12px;border:1px solid var(--line);margin-bottom:10px;z-index:0}
+.map-hint{font-size:12px;color:var(--muted);margin-bottom:8px}
+.map-legend{display:flex;flex-wrap:wrap;gap:6px 10px;margin-bottom:12px}
+.legend-item{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);
+  cursor:pointer;padding:3px 6px;border-radius:8px;transition:background .15s}
+.legend-item:hover,.legend-item.active{background:rgba(255,255,255,.06);color:var(--ink)}
+.legend-item i{display:inline-block;width:10px;height:10px;border-radius:3px;flex-shrink:0}
+.map-day-btns{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;align-items:center}
+.map-day-btn{padding:6px 12px;border-radius:16px;font-size:12px;font-weight:600;cursor:pointer;
+  background:#222d3d;border:2px solid var(--line);color:var(--muted);transition:all .15s}
+.map-day-btn.active{color:#fff;transform:scale(1.04)}
+.map-day-btn-all{border-style:dashed;font-weight:500}
+.day-route{font-size:12px;color:var(--muted);margin:-4px 0 8px 0}
+.day-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-bottom:10px}
+@media(min-width:520px){.day-stats{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:640px){.day-stats{grid-template-columns:repeat(5,1fr)}}
+.stat-cell{background:#222d3d;border-radius:8px;padding:8px 10px}
+.stat-label{display:block;font-size:10px;color:var(--muted);margin-bottom:2px}
+.stat-val{font-size:11px;font-weight:600;color:var(--ink);line-height:1.35}
+.hotel-card{background:#222d3d;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px}
+.hotel-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:4px}
+.hotel-stars{font-size:12px;color:var(--gold);white-space:nowrap}
+.hotel-rating{font-size:13px;margin:6px 0}
+.hotel-links a{color:var(--ink);font-size:13px;text-decoration:none}
+.hotel-links a:hover{color:#fff;text-decoration:underline}
+.day-meta a{color:var(--ink);text-decoration:none}
+.day-meta a:hover{color:#fff;text-decoration:underline}
+.elev-profile{width:100%;border-radius:10px;margin-top:8px;border:1px solid var(--line)}
+.elev-profile-svg{width:100%;height:auto;display:block;margin-top:8px;border-radius:10px;border:1px solid var(--line);background:#141b24}
+.day-card{cursor:pointer;border-radius:0 8px 8px 0;transition:background .15s,border-width .15s}
+.day-card:hover,.day-card.active{background:rgba(255,255,255,.04)}
+.day-card.active{border-left-width:5px}
+.leaflet-popup-content-wrapper{border-radius:10px}
+.leaflet-popup-content{margin:10px 14px;font-size:13px;line-height:1.45}
+.km-pin{display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;
+  border:2px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.45);line-height:1}
+.km-pin.dim{opacity:.45;transform:scale(.85)}
+.km-pin.active{transform:scale(1.08);box-shadow:0 3px 12px rgba(0,0,0,.55)}
+.km-pin-ref{width:10px;height:10px;background:#8b9cb3;border:2px solid #fff;border-radius:50%;
+  box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.km-marker-wrap{display:flex;flex-direction:column;align-items:center;text-align:center}
+.km-marker-wrap.dim{opacity:.4}
+.km-marker-wrap.active .km-pin-alt{transform:scale(1.06)}
+.km-pin-alt{display:inline-block;padding:3px 7px;font-size:10px;font-weight:700;color:#fff;
+  border:2px solid #fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.45);white-space:nowrap;line-height:1.2}
+.km-place-label{margin-top:3px;font-size:10px;font-weight:600;color:#e8edf4;
+  text-shadow:0 1px 3px rgba(0,0,0,.9),0 0 6px rgba(0,0,0,.7);white-space:nowrap;max-width:120px;
+  overflow:hidden;text-overflow:ellipsis}
+.gear-zone{margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.gear-zone:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.gear-zone h4{font-size:13px;color:var(--ink);margin-bottom:6px}
+.gear-zone .alt-tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;
+  background:rgba(45,212,168,.12);color:var(--accent);margin-left:6px;font-weight:500}
+.review-block{margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.review-block:last-child{border-bottom:none;margin-bottom:0}
+.review-block h4{font-size:13px;color:var(--accent);margin-bottom:6px}
+.review-src{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.5}
+.review-src a{color:var(--ink);text-decoration:none}
+.review-src a:hover{color:#fff;text-decoration:underline}
+.review-kw{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 10px}
+.review-kw span{font-size:11px;padding:4px 10px;border-radius:12px;background:#1a2332;color:var(--accent);border:1px solid var(--line)}
+.review-kw span.neg{color:var(--warn);border-color:rgba(240,180,41,.25)}
+.review-score-big{font-size:42px;font-weight:800;color:var(--gold);line-height:1}
+.review-score-wrap{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin:12px 0 16px}
+.review-dim{flex:1;min-width:200px}
+.review-dim-row{display:grid;grid-template-columns:1fr 2.5rem;gap:8px;align-items:baseline;font-size:12px;margin:4px 0;color:var(--muted)}
+.review-dim-row span:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+.review-dim-bar{height:6px;background:#1a2332;border-radius:3px;overflow:hidden;margin-bottom:8px}
+.review-dim-bar i{display:block;height:100%;background:var(--accent);border-radius:3px}
+.review-dim-bar i.gold{background:var(--gold)}
+.review-dim-bar i.warn{background:var(--warn)}
+.review-qa{margin-top:8px}
+.review-qa h5{font-size:13px;color:var(--ink);margin:12px 0 6px;font-weight:600}
+.review-qa a{color:var(--ink);text-decoration:none}
+.review-qa a:hover{color:#fff;text-decoration:underline}
+.review-block a{color:var(--ink);text-decoration:none}
+.review-block a:hover{color:#fff;text-decoration:underline}
+.review-notes-table{width:100%;border-collapse:collapse;font-size:12px;margin:10px 0}
+.review-notes-table th,.review-notes-table td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:center;vertical-align:middle;line-height:1.45}
+.review-notes-table th{color:var(--muted);font-weight:600;font-size:11px;border-bottom:2px solid var(--line)}
+.review-notes-table tr:last-child td{border-bottom:none}
+.review-notes-table a{color:var(--ink);text-decoration:none}
+.review-notes-table a:hover{color:#fff;text-decoration:underline}
+.prep-hero{background:#222d3d;border-radius:12px;padding:14px;margin-bottom:14px;text-align:center}
+.prep-hero .prep-d-day{font-size:28px;font-weight:800;color:var(--gold)}
+.prep-hero .prep-d-sub{font-size:12px;color:var(--muted);margin-top:4px}
+.prep-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+.prep-table th{text-align:left;padding:8px 6px;border-bottom:2px solid var(--line);color:var(--muted);
+  font-weight:600;font-size:11px;white-space:nowrap}
+.prep-table td{padding:10px 6px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45}
+.prep-table tr:last-child td{border-bottom:none}
+.prep-table .prep-item{font-weight:600;color:var(--ink)}
+.prep-table .prep-date{white-space:nowrap;color:var(--gold);font-weight:600}
+.prep-table .prep-date.rec{color:var(--accent);font-weight:500}
+.prep-table .prep-dur{color:var(--muted);font-size:11px}
+.prep-table tr.prep-urgent td{background:rgba(240,180,41,.06)}
+.prep-table tr.prep-pass td{opacity:.55}
+.prep-milestone{margin-top:14px;padding:10px 12px;background:#222d3d;border-radius:10px;font-size:12px}
+.prep-milestone b{color:var(--warn)}
+@media(max-width:520px){
+  .prep-table thead{display:none}
+  .prep-table tr{display:block;padding:10px 0;border-bottom:1px solid var(--line)}
+  .prep-table td{display:block;padding:2px 0;border:none}
+  .prep-table td::before{content:attr(data-label);display:inline-block;color:var(--muted);font-size:10px;
+    min-width:4.5em;margin-right:6px}
+}
+.flight-opt{background:#222d3d;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
+.flight-opt.rec{border-color:rgba(45,212,168,.45)}
+.flight-opt h4{font-size:14px;margin-bottom:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.flight-opt .flight-badge{font-size:10px;padding:2px 8px;border-radius:10px;background:rgba(45,212,168,.15);color:var(--accent)}
+.flight-route{font-size:12px;color:var(--ink);line-height:1.55;margin-bottom:6px}
+.flight-meta{font-size:11px;color:var(--muted);line-height:1.5}
+.flight-meta a{color:var(--ink);text-decoration:none}
+.flight-meta a:hover{color:#fff;text-decoration:underline}
+.safari-overview{margin-bottom:16px}
+.safari-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0 16px}
+@media(max-width:640px){.safari-metrics{grid-template-columns:repeat(2,1fr)}}
+.safari-metric{background:#222d3d;border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center}
+.safari-metric b{display:block;font-size:16px;color:var(--gold);line-height:1.2}
+.safari-metric span{font-size:11px;color:var(--muted)}
+.journey-strip{display:flex;align-items:stretch;gap:0;margin:14px 0;overflow-x:auto;padding-bottom:4px}
+.journey-seg{flex:1;min-width:88px;text-align:center;position:relative;padding:10px 6px 8px;
+  background:#222d3d;border:1px solid var(--line);font-size:11px;line-height:1.35}
+.journey-seg:first-child{border-radius:10px 0 0 10px}
+.journey-seg:last-child{border-radius:0 10px 10px 0}
+.journey-seg.junction{background:rgba(45,212,168,.12);border-color:rgba(45,212,168,.4)}
+.journey-seg.optional{background:rgba(240,180,41,.08);border-color:rgba(240,180,41,.35)}
+.journey-seg b{display:block;font-size:12px;color:var(--ink);margin-bottom:3px}
+.journey-seg .jsub{color:var(--muted);font-size:10px}
+.journey-arrow{align-self:center;color:var(--muted);font-size:14px;padding:0 2px;flex-shrink:0}
+.route-schematic{background:#141b24;border:1px solid var(--line);border-radius:12px;padding:16px 12px 12px;margin:14px 0}
+.route-schematic svg{width:100%;height:auto;display:block}
+.route-schematic .rs-caption{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:10px;font-size:11px;color:var(--muted)}
+.route-schematic .rs-caption span{display:inline-flex;align-items:center;gap:5px}
+.route-schematic .rs-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.highlight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+@media(max-width:640px){.highlight-grid{grid-template-columns:1fr}}
+.hl-card{background:#222d3d;border:1px solid var(--line);border-radius:10px;padding:12px}
+.hl-card .hl-icon{font-size:18px;margin-bottom:4px}
+.hl-card b{display:block;font-size:13px;color:var(--accent);margin-bottom:4px}
+.hl-card p{font-size:12px;color:var(--muted);line-height:1.45;margin:0}
+.connect-check{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+@media(max-width:520px){.connect-check{grid-template-columns:1fr}}
+.conn-item{display:flex;gap:10px;align-items:flex-start;background:#222d3d;border:1px solid var(--line);
+  border-radius:10px;padding:10px 12px;font-size:12px}
+.conn-score{flex-shrink:0;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-weight:800;font-size:13px}
+.conn-score.high{background:rgba(45,212,168,.2);color:var(--accent)}
+.conn-score.mid{background:rgba(240,180,41,.15);color:var(--gold)}
+.conn-score.low{background:rgba(139,156,179,.15);color:var(--muted)}
+.conn-item b{display:block;color:var(--ink);margin-bottom:2px;font-size:12px}
+.conn-item span{color:var(--muted);line-height:1.4}
+#safari-map{height:300px;border-radius:12px;border:1px solid var(--line);margin:12px 0;z-index:0}
+.scheme-compare{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+@media(max-width:640px){.scheme-compare{grid-template-columns:1fr}}
+.scheme-card{border:1px solid var(--line);border-radius:10px;padding:12px;background:#222d3d;font-size:12px}
+.scheme-card.rec{border-color:rgba(45,212,168,.45);background:rgba(45,212,168,.06)}
+.scheme-card h4{font-size:13px;margin-bottom:6px;color:var(--ink)}
+.scheme-card .sc-route{color:var(--muted);line-height:1.45;margin-bottom:8px;min-height:2.8em}
+.scheme-card .sc-meta{display:flex;flex-wrap:wrap;gap:4px}
+.scheme-card .sc-meta span{background:#1a2332;padding:2px 7px;border-radius:6px;font-size:10px;color:var(--muted)}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="badge">徒步帮旅行社旗舰店</div>
+    <h1>非洲之巅·乞力马扎罗威士忌线 8日</h1>
+    <p class="dest">📍 坦桑尼亚 · 乞力马扎罗（Machame 威士忌线） <span class="tag" style="background:rgba(240,180,41,.15);color:var(--gold)">轻奢版</span></p>
+  </header>
+
+  
+
+  <div class="metrics"><div class="metric"><div class="num">8 天</div><div class="label">天数</div></div><div class="metric"><div class="num">中高</div><div class="label">难度</div></div><div class="metric"><div class="num">63.0 km</div><div class="label">里程</div></div><div class="metric"><div class="num">5894 m</div><div class="label">爬升</div></div></div>
+  <p style="margin-bottom:14px"><span class="tag">2026年7月25日出发</span><span class="tag">元旦跨年团</span></p>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="overview">概览</button>
+    <button class="tab" data-tab="schedule">日程</button>
+    <button class="tab" data-tab="cost">费用</button>
+    <button class="tab" data-tab="gear">装备</button>
+    <button class="tab" data-tab="reviews">用户评价</button>
+    <button class="tab" data-tab="prep">准备时间线</button>
+    <button class="tab" data-tab="flights">往返交通</button>
+    <button class="tab" data-tab="dates">团期评估</button>
+    <button class="tab" data-tab="serengeti">衔接塞伦盖蒂</button>
+  </div>
+
+  <div id="overview" class="panel active">
+    <div class="card">
+      <h3>亮点</h3>
+      <ul class="plain"><li>马查姆 (Machame)「威士忌线」，登顶乌呼鲁峰 (Uhuru Peak) 5894m</li><li>全程徒步约 63km（海拔剖面图 62.98km）</li><li>徒步帮 / 徒步中国团队执行</li><li>可衔接塞伦盖蒂 (Serengeti) 游猎延展</li></ul>
+    </div>
+    <div class="card"><h3>挑战难度</h3><p>综合评级：<b style="color:var(--accent)">中高</b></p><p class="muted" style="margin-top:8px">马查姆威士忌线对体能与高原适应均有要求；整体节奏「攀高睡低」，最难在冲顶日。</p><ul class="plain" style="margin-top:10px"><li>D6 冲顶日：徒步约 17km、12–14h，凌晨从 Barafu Camp（4673m）出发登顶 Uhuru Peak（5894m），当日爬升约 1221m、下降约 2794m</li><li>全程徒步约 63km（Machame Gate 1800m → Mweka Gate 1640m），含多日连续爬升</li><li>D4 适应日：先上至 Lava Tower（4630m）午餐适应，再下至 Barranco Camp（3960m）过夜</li><li>Barafu Camp（4673m）为冲顶大本营，夜间极寒；Mweka Hut（3100m）下撤后含氧量明显恢复</li><li>长距离下降对膝盖负担较大，建议护膝与登山杖；需提前评估高反风险</li></ul></div>
+    <div class='card'><h3>住宿酒店</h3><div class="hotel-card"><div class="hotel-head"><b>Kibo Palace Hotel</b><span class="hotel-stars">4 星</span></div><p class="muted">Arusha（阿鲁沙） · 入住 D1、D7</p><p class="hotel-rating">Google 4.7/5（1,815 条评价） <span class="muted">来源 Google Hotels</span></p><p class="hotel-links"><a href="https://www.google.com/maps/place/Kibo+Palace+Hotel/@-3.373389,36.694222,17z" target="_blank" rel="noopener">Google 地图</a> · <a href="https://www.google.com/travel/hotels/entity/ChcIlYPavZyc5bFTGgsvZy8xdGxyMnkxdxAB" target="_blank" rel="noopener">Google 酒店</a></p><p class="muted" style="margin-top:6px;font-size:12px">行程标注「或同级」；Agoda/Trip 等平台偶有五星标注，Google 归类为四星</p></div></div>
+  </div>
+
+  <div id="schedule" class="panel">
+    <div class="card">
+      <h3>日程日历</h3>
+      <p class="muted" style="margin-bottom:10px">团期 <b>2026 年 7 月 25 日</b> 出发（D1 抵达 JRO）· 坦桑尼亚当地日期（EAT，UTC+3）</p>
+      <div class="day-cal-row">
+        <div class="day-cal-cell"><b>D1</b><span class="dc-date">7月25日</span> <span class="dc-wk">周六</span><br>集结 · 阿鲁沙</div>
+        <div class="day-cal-cell"><b>D2</b><span class="dc-date">7月26日</span> <span class="dc-wk">周日</span><br>马查姆营地</div>
+        <div class="day-cal-cell"><b>D3</b><span class="dc-date">7月27日</span> <span class="dc-wk">周一</span><br>希拉营地</div>
+        <div class="day-cal-cell"><b>D4</b><span class="dc-date">7月28日</span> <span class="dc-wk">周二</span><br>巴兰科营地</div>
+        <div class="day-cal-cell"><b>D5</b><span class="dc-date">7月29日</span> <span class="dc-wk">周三</span><br>巴拉夫大本营</div>
+        <div class="day-cal-cell"><b>D6</b><span class="dc-date">7月30日</span> <span class="dc-wk">周四</span><br>冲顶 · 姆维卡</div>
+        <div class="day-cal-cell"><b>D7</b><span class="dc-date">7月31日</span> <span class="dc-wk">周五</span><br>下撤 · 阿鲁沙</div>
+        <div class="day-cal-cell"><b>D8</b><span class="dc-date">8月1日</span> <span class="dc-wk">周六</span><br>返程或延展</div>
+      </div>
+    </div>
+    <div class="card"><h3>海拔剖面（徒步 62.98km）</h3><p class="muted">⛺ 标注过夜营地；黄点为途径点（含午餐适应、冲顶、终点）。</p><div class="elev-wrap"><svg class="elev-profile-svg" viewBox="0 0 720 300" role="img" aria-label="海拔剖面 Machame Gate 至 Mweka Gate"><defs><linearGradient id="elevFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f06595" stop-opacity="0.55"/><stop offset="45%" stop-color="#fcc419" stop-opacity="0.45"/><stop offset="100%" stop-color="#51cf66" stop-opacity="0.35"/></linearGradient></defs><line x1="54" y1="219.7" x2="702" y2="219.7" stroke="#2e3d52" stroke-width="1" stroke-dasharray="4 4"/><text x="46" y="223.7" text-anchor="end" fill="#8b9cb3" font-size="10">2000m</text><line x1="54" y1="169.0" x2="702" y2="169.0" stroke="#2e3d52" stroke-width="1" stroke-dasharray="4 4"/><text x="46" y="173.0" text-anchor="end" fill="#8b9cb3" font-size="10">3000m</text><line x1="54" y1="118.3" x2="702" y2="118.3" stroke="#2e3d52" stroke-width="1" stroke-dasharray="4 4"/><text x="46" y="122.3" text-anchor="end" fill="#8b9cb3" font-size="10">4000m</text><line x1="54" y1="67.6" x2="702" y2="67.6" stroke="#2e3d52" stroke-width="1" stroke-dasharray="4 4"/><text x="46" y="71.6" text-anchor="end" fill="#8b9cb3" font-size="10">5000m</text><path d="M 54.0,229.9 L 167.2,168.5 L 218.6,126.2 L 290.6,86.4 L 342.1,120.4 L 393.5,116.6 L 434.7,84.2 L 475.8,30.2 L 486.1,22.3 L 568.4,164.0 L 702.0,238.0 L 702.0,238.0 L 54.0,238.0 Z" fill="url(#elevFill)" stroke="none"/><path d="M 54.0,229.9 L 167.2,168.5 L 218.6,126.2 L 290.6,86.4 L 342.1,120.4 L 393.5,116.6 L 434.7,84.2 L 475.8,30.2 L 486.1,22.3 L 568.4,164.0 L 702.0,238.0" fill="none" stroke="#2dd4a8" stroke-width="2.5" stroke-linejoin="round"/><circle cx="54.0" cy="229.9" r="4" fill="#f0b429" stroke="#fff" stroke-width="1.5"/><text x="54.0" y="215.9" text-anchor="middle" fill="#e8edf4" font-size="9" font-weight="600">Machame Gate</text><text x="54.0" y="211.9" text-anchor="middle" fill="#8b9cb3" font-size="8">1800m</text><circle cx="167.2" cy="168.5" r="5" fill="#2dd4a8" stroke="#fff" stroke-width="1.5"/><text x="167.2" y="155.5" text-anchor="middle" font-size="14">⛺</text><text x="167.2" y="190.5" text-anchor="middle" fill="#e8edf4" font-size="9" font-weight="600">Machame Camp</text><text x="167.2" y="202.5" text-anchor="middle" fill="#8b9cb3" font-size="8">3010m</text><circle cx="218.6" cy="126.2" r="5" fill="#2dd4a8" stroke="#fff" stroke-width="1.5"/><text x="218.6" y="104.2" text-anchor="middle" fill="#e8edf4" font-size="9" font-weight="600">Shira Camp</text><text x="218.6" y="96.2" text-anchor="middle" fill="#8b9cb3" font-size="8">3845m</text><text x="218.6" y="118.2" text-anchor="middle" font-size="14">⛺</text><circle cx="290.6" cy="86.4" r="4" fill="#f0b429" stroke="#fff" stroke-width="1.5"/><text x="290.6" y="108.4" text-anchor="middle" fill="#e8edf4" font-size="9" font-weight="600">Lava Tower</text><text x="290.6" y="120.4" text-anchor="middle" fill="#8b9cb3" font-size="8">4630m</text><circle cx="342.1" cy="120.4" r="5" fill="#2dd4a8" stroke="#fff" stroke-width="1.5"/><text x="342.1" y="98.4" text-anchor="middle" fill="#e8edf4" font-size="9" font-weight="600">Barranco Camp</text><text x="342.1" y="90.4" text-anchor="middle" fill="#8b9cb3" font-size="8">3960m</text><text x="342.1" y="112.4" text-anchor="middle" font-size="14">⛺</text><circle cx="393.5" cy="116.6" r="5" fill="#2dd4a8" stroke="#fff" stroke-width="1.5"/><text x="393.5" y="108.6" text-anchor="middle" font-size="14">⛺</text><text x="393.5" y="138.6" text-anchor="middle" fill="#e8edf4" font-size="9" font-weight="600">Karanga Camp</text><text x="393.5" y="150.6" text-anchor="middle" fill="#8b9cb3" font-size="8">4035m</text><circle cx="434.7" cy="84.2" r="5" fill="#2dd4a8" stroke="#fff" stroke-width="1.5"/><text x="434.7" y="62.2" text-anchor="middle" fill="#e8edf4" font-size="9" font-weight="600">Barafu Camp</text><text x="434.7" y="54.2" text-anchor="middle" fill="#8b9cb3" font-size="8">4673m</text><text x="434.7" y="76.2" text-anchor="middle" font-size="14">⛺</text><circle cx="475.8" cy="30.2" r="4" fill="#f0b429" stroke="#fff" stroke-width="1.5"/><text x="475.8" y="52.2" text-anchor="middle" fill="#e8edf4" font-size="9" font-weight="600">Stella Point</text><text x="475.8" y="64.2" text-anchor="middle" fill="#8b9cb3" font-size="8">5739m</text><circle cx="486.1" cy="22.3" r="4" fill="#f0b429" stroke="#fff" stroke-width="1.5"/><text x="486.1" y="8.3" text-anchor="middle" fill="#e8edf4" font-size="9" font-weight="600">Uhuru Peak</text><text x="486.1" y="4.3" text-anchor="middle" fill="#8b9cb3" font-size="8">5894m</text><circle cx="568.4" cy="164.0" r="5" fill="#2dd4a8" stroke="#fff" stroke-width="1.5"/><text x="568.4" y="151.0" text-anchor="middle" font-size="14">⛺</text><text x="568.4" y="186.0" text-anchor="middle" fill="#e8edf4" font-size="9" font-weight="600">Mweka Hut</text><text x="568.4" y="198.0" text-anchor="middle" fill="#8b9cb3" font-size="8">3100m</text><circle cx="702.0" cy="238.0" r="4" fill="#f0b429" stroke="#fff" stroke-width="1.5"/><text x="702.0" y="224.0" text-anchor="middle" fill="#e8edf4" font-size="9" font-weight="600">Mweka Gate</text><text x="702.0" y="220.0" text-anchor="middle" fill="#8b9cb3" font-size="8">1640m</text><text x="54.0" y="282" text-anchor="middle" fill="#8b9cb3" font-size="10">0.0</text><text x="216.0" y="282" text-anchor="middle" fill="#8b9cb3" font-size="10">15.7</text><text x="378.0" y="282" text-anchor="middle" fill="#8b9cb3" font-size="10">31.5</text><text x="540.0" y="282" text-anchor="middle" fill="#8b9cb3" font-size="10">47.2</text><text x="702.0" y="282" text-anchor="middle" fill="#8b9cb3" font-size="10">63.0</text><text x="360" y="296" text-anchor="middle" fill="#8b9cb3" font-size="11">里程 km（63.0 km · Machame Gate → Mweka Gate）</text><text x="12" y="14" fill="#8b9cb3" font-size="11">海拔 m</text><text x="600" y="14" fill="#8b9cb3" font-size="11">⛺ 过夜营地 · ● 途径点</text></svg><p class="muted" style="margin-top:8px;font-size:11px">OpenStreetMap Nominatim（免费）；交互地图瓦片同为 OSM。Google Maps 嵌入需 API Key，未启用。</p></div></div>
+    <div class="card"><h3>途径点海拔</h3><p class="muted">海拔以公尺 (m) 为准；含各营地备注。</p><table class="cost-table"><tr><td class="cost-label">Machame Gate</td><td class="cost-val"><b>1800m</b> · 起点，穿越热带雨林</td></tr><tr><td class="cost-label">Machame Camp</td><td class="cost-val"><b>3010m</b> · 官方路牌标 2835m，营地最高处常按 3010m 计</td></tr><tr><td class="cost-label">Shira Camp (Shira 2)</td><td class="cost-val"><b>3845m</b> · 离开森林进入高山荒野，可远眺梅鲁火山 (Mt Meru)</td></tr><tr><td class="cost-label">Lava Tower</td><td class="cost-val"><b>4630m</b> · 路线最高适应点，仅午餐与高反适应，不过夜</td></tr><tr><td class="cost-label">Barranco Camp</td><td class="cost-val"><b>3960m</b> · 位于 Barranco 墙下，被誉为最美营地</td></tr><tr><td class="cost-label">Karanga Valley / Camp</td><td class="cost-val"><b>4035m</b> · 冲顶前短途过渡营地</td></tr><tr><td class="cost-label">Barafu Camp</td><td class="cost-val"><b>4673m</b> · 冲顶大本营 (Base Camp)，高山极寒荒漠地貌</td></tr><tr><td class="cost-label">Mweka Hut / Camp</td><td class="cost-val"><b>3100m</b> · 冲顶后下撤营地，空气含氧量恢复</td></tr><tr><td class="cost-label">Mweka Gate</td><td class="cost-val"><b>1640m</b> · 终点，领取登顶证书处</td></tr></table></div>
+    <div class="card">
+      <h3>路线地图 · 坦桑尼亚北部</h3>
+      <p class="map-hint">标记显示海拔与英文地名；点击 D1–D8、「全部」或图例/日程卡片切换路线高亮。</p>
+      <div id="route-map"></div>
+      <div class="map-legend" id="map-legend"><span class="legend-item" data-day="1" title="7月25日 · 集结日 · 阿鲁沙"><i style="background:#4dabf7"></i>D1 7/25</span><span class="legend-item" data-day="2" title="7月26日 · 阿鲁沙 → 马查姆营地"><i style="background:#51cf66"></i>D2 7/26</span><span class="legend-item" data-day="3" title="7月27日 · 马查姆 → 希拉营地"><i style="background:#9775fa"></i>D3 7/27</span><span class="legend-item" data-day="4" title="7月28日 · 希拉 → 巴兰科营地"><i style="background:#fcc419"></i>D4 7/28</span><span class="legend-item" data-day="5" title="7月29日 · 巴兰科 → 巴拉夫营地"><i style="background:#ff922b"></i>D5 7/29</span><span class="legend-item" data-day="6" title="7月30日 · 冲顶乌呼鲁峰 → 姆维卡"><i style="background:#f06595"></i>D6 7/30</span><span class="legend-item" data-day="7" title="7月31日 · 姆维卡 → 阿鲁沙"><i style="background:#22b8cf"></i>D7 7/31</span><span class="legend-item" data-day="8" title="8月1日 · 返程或延展"><i style="background:#868e96"></i>D8 8/1</span></div>
+      <div class="map-day-btns" id="map-day-btns"></div>
+    </div>
+    <div class="card"><div class="day-card" data-day="1" tabindex="0" style="border-left-color:#4dabf7"><div class="day-head"><span class="day-num" style="color:#4dabf7">D1</span><span class="day-title">集结日 · 阿鲁沙</span><span class="day-date">7月25日 · 周六</span></div><p class="day-route">Kilimanjaro Intl. Airport (JRO) → Arusha</p><div class="day-stats"><div class="stat-cell"><span class="stat-label">餐饮</span><span class="stat-val">欢迎晚宴</span></div><div class="stat-cell"><span class="stat-label">车程</span><span class="stat-val">机场接机约 1–1.5h</span></div><div class="stat-cell"><span class="stat-label">营地海拔</span><span class="stat-val">Arusha 1400m</span></div></div><ul class="day-acts"><li>抵达坦桑尼亚（赤道以南，官方语言英语/斯瓦希里语）</li><li>Arusha 为坦桑第三大城市，距乞力马扎罗约 60km</li><li>机场接机 → 入住酒店</li><li>行前说明会、装备检查</li><li>欢迎晚宴</li></ul><div class="day-meta"><span>🚗 专车接机</span><span>🏨 <a href="https://www.google.com/maps/place/Kibo+Palace+Hotel/@-3.373389,36.694222,17z" target="_blank" rel="noopener">Kibo Palace Hotel（或同级）</a></span></div></div>
+<div class="day-card" data-day="2" tabindex="0" style="border-left-color:#51cf66"><div class="day-head"><span class="day-num" style="color:#51cf66">D2</span><span class="day-title">阿鲁沙 → 马查姆营地</span><span class="day-date">7月26日 · 周日</span></div><p class="day-route">Arusha → Machame Gate → Machame Camp</p><div class="day-stats"><div class="stat-cell"><span class="stat-label">餐饮</span><span class="stat-val">含三餐</span></div><div class="stat-cell"><span class="stat-label">车程</span><span class="stat-val">私车 1h+</span></div><div class="stat-cell"><span class="stat-label">徒步</span><span class="stat-val">11km · 5–6h</span></div><div class="stat-cell"><span class="stat-label">爬升/下降</span><span class="stat-val">↑1210m</span></div><div class="stat-cell"><span class="stat-label">营地海拔</span><span class="stat-val">Machame Camp 3010m</span></div></div><ul class="day-acts"><li>早餐后乘私人小巴前往 Machame Gate（1800m）</li><li>与厨师、背夫等支援团队会合，登记并称重行李</li><li>经咖啡园进入热带雨林徒步</li><li>抵达 Machame Camp（3010m）扎营</li></ul><div class="day-meta"><span>🚗 车程 1h+ · 徒步 11km</span><span>🏨 Machame Camp 帐篷</span></div></div>
+<div class="day-card" data-day="3" tabindex="0" style="border-left-color:#9775fa"><div class="day-head"><span class="day-num" style="color:#9775fa">D3</span><span class="day-title">马查姆 → 希拉营地</span><span class="day-date">7月27日 · 周一</span></div><p class="day-route">Machame Camp → Shira Camp (Shira 2)</p><div class="day-stats"><div class="stat-cell"><span class="stat-label">餐饮</span><span class="stat-val">含三餐</span></div><div class="stat-cell"><span class="stat-label">徒步</span><span class="stat-val">5km · 4–5h</span></div><div class="stat-cell"><span class="stat-label">爬升/下降</span><span class="stat-val">↑835m</span></div><div class="stat-cell"><span class="stat-label">营地海拔</span><span class="stat-val">Shira Camp 3845m</span></div></div><ul class="day-acts"><li>陡坡、尘土路段，部分无树荫需防晒</li><li>离开雨林进入高山荒野（Shira Plateau）</li><li>晴好天气可远眺梅鲁火山 (Mt Meru)</li><li>抵达 Shira Camp / Shira 2（3845m）扎营</li><li>学习高压氧箱/氧气瓶等高原适应知识</li></ul><div class="day-meta"><span>🚗 徒步 5km</span><span>🏨 Shira Camp 帐篷</span></div></div>
+<div class="day-card" data-day="4" tabindex="0" style="border-left-color:#fcc419"><div class="day-head"><span class="day-num" style="color:#fcc419">D4</span><span class="day-title">希拉 → 巴兰科营地</span><span class="day-date">7月28日 · 周二</span></div><p class="day-route">Shira Camp → Lava Tower → Barranco Camp</p><div class="day-stats"><div class="stat-cell"><span class="stat-label">餐饮</span><span class="stat-val">含三餐</span></div><div class="stat-cell"><span class="stat-label">徒步</span><span class="stat-val">10km · 6–7h</span></div><div class="stat-cell"><span class="stat-label">爬升/下降</span><span class="stat-val">↑785m ↓670m</span></div><div class="stat-cell"><span class="stat-label">营地海拔</span><span class="stat-val">Barranco Camp 3960m</span></div></div><ul class="day-acts"><li>稳步上行至 Lava Tower（4630m）午餐——路线最高适应点，仅适应不过夜</li><li>午后约 2h 下降经火山岩地带至 Barranco Camp（3960m）</li><li>营地位于 Barranco 墙下，被誉为最美营地</li><li>晴好天气可远观 Uhuru Peak 日落</li></ul><div class="day-meta"><span>🚗 徒步 10km</span><span>🏨 Barranco Camp 帐篷</span></div></div>
+<div class="day-card" data-day="5" tabindex="0" style="border-left-color:#ff922b"><div class="day-head"><span class="day-num" style="color:#ff922b">D5</span><span class="day-title">巴兰科 → 巴拉夫营地</span><span class="day-date">7月29日 · 周三</span></div><p class="day-route">Barranco Camp → Karanga Camp → Barafu Camp</p><div class="day-stats"><div class="stat-cell"><span class="stat-label">餐饮</span><span class="stat-val">含三餐</span></div><div class="stat-cell"><span class="stat-label">徒步</span><span class="stat-val">11km · 8–10h</span></div><div class="stat-cell"><span class="stat-label">爬升/下降</span><span class="stat-val">↑713m</span></div><div class="stat-cell"><span class="stat-label">营地海拔</span><span class="stat-val">Barafu Camp 4673m</span></div></div><ul class="day-acts"><li>翻越 Barranco Wall</li><li>途经 Heim Glacier 下方，穿越 Karanga Valley / Camp（4035m，冲顶前过渡营地）</li><li>与 Mweka 下撤路线汇合后上升至 Barafu Camp（4673m）</li><li>冲顶大本营 (Base Camp)，高山极寒荒漠地貌；整理冲顶装备</li><li>可眺望 Mawenzi Peak 与 Kibo</li></ul><div class="day-meta"><span>🚗 徒步 11km</span><span>🏨 Barafu Camp 帐篷</span></div></div>
+<div class="day-card" data-day="6" tabindex="0" style="border-left-color:#f06595"><div class="day-head"><span class="day-num" style="color:#f06595">D6</span><span class="day-title">冲顶乌呼鲁峰 → 姆维卡</span><span class="day-date">7月30日 · 周四</span></div><p class="day-route">Barafu Camp → Uhuru Peak → Mweka Hut</p><div class="day-stats"><div class="stat-cell"><span class="stat-label">餐饮</span><span class="stat-val">含三餐</span></div><div class="stat-cell"><span class="stat-label">徒步</span><span class="stat-val">17km · 12–14h</span></div><div class="stat-cell"><span class="stat-label">爬升/下降</span><span class="stat-val">↑1221m ↓2794m</span></div><div class="stat-cell"><span class="stat-label">营地海拔</span><span class="stat-val">Mweka Hut 3100m · 登顶 5894m</span></div></div><ul class="day-acts"><li>凌晨从 Barafu Camp（4673m）出发，经碎石坡上行</li><li>约 6h 抵达 Stella Point（5739m）观日出</li><li>再 1h 至 Uhuru Peak（5894m，非洲之巅）</li><li>下撤至 Barafu Camp 午餐，继续降至 Mweka Hut（3100m）——含氧量明显恢复</li></ul><div class="day-meta"><span>🚗 徒步 17km</span><span>🏨 Mweka Hut 帐篷</span></div></div>
+<div class="day-card" data-day="7" tabindex="0" style="border-left-color:#22b8cf"><div class="day-head"><span class="day-num" style="color:#22b8cf">D7</span><span class="day-title">姆维卡 → 阿鲁沙</span><span class="day-date">7月31日 · 周五</span></div><p class="day-route">Mweka Hut → Mweka Gate → Arusha</p><div class="day-stats"><div class="stat-cell"><span class="stat-label">餐饮</span><span class="stat-val">含三餐（庆功宴）</span></div><div class="stat-cell"><span class="stat-label">车程</span><span class="stat-val">回阿鲁沙车程约 1–2h</span></div><div class="stat-cell"><span class="stat-label">徒步</span><span class="stat-val">8.5km · 约 6h</span></div><div class="stat-cell"><span class="stat-label">爬升/下降</span><span class="stat-val">↓1460m</span></div><div class="stat-cell"><span class="stat-label">营地海拔</span><span class="stat-val">Arusha 1400m</span></div></div><ul class="day-acts"><li>早餐后 4–6h 下撤至 Mweka Gate（1640m），建议护膝+登山杖</li><li>登记并领取登顶证书（Stella Point 绿证 / Uhuru Peak 金证）</li><li>沿泥泞路步行 3km 至 Mweka Village 午餐</li><li>乘车回 Arusha 酒店休整、庆功宴</li></ul><div class="day-meta"><span>🚗 徒步 8.5km + 车程</span><span>🏨 <a href="https://www.google.com/maps/place/Kibo+Palace+Hotel/@-3.373389,36.694222,17z" target="_blank" rel="noopener">Kibo Palace Hotel（或同级）</a></span></div></div>
+<div class="day-card" data-day="8" tabindex="0" style="border-left-color:#868e96"><div class="day-head"><span class="day-num" style="color:#868e96">D8</span><span class="day-title">返程或延展</span><span class="day-date">8月1日 · 周六</span></div><p class="day-route">Arusha → JRO / Serengeti extension</p><div class="day-stats"><div class="stat-cell"><span class="stat-label">餐饮</span><span class="stat-val">含早餐，午晚自理</span></div><div class="stat-cell"><span class="stat-label">车程</span><span class="stat-val">送机 1–1.5h</span></div></div><ul class="day-acts"><li>统一行程结束，自选回国或继续游玩</li><li>时间允许可延展 Serengeti 游猎，观赏动物大迁徙</li><li>专车送机</li></ul><div class="day-meta"><span>🚗 送机</span><span>🏨 无</span></div></div></div>
+  </div>
+
+  <div id="cost" class="panel"><div class="card"><p style="margin-bottom:10px"><span class="tag muted-tag" style="">标准版 ¥18,500 · 8天7晚</span><span class="tag" style="border:1px solid var(--accent)">轻奢版 ¥19,800 · 8天7晚 · 已选</span><span class="tag muted-tag" style="">豪华版 ¥25,800 · 8天7晚</span></p><div class="price-big">¥19,800</div><p class="price-sub">轻奢版 · 8天7晚 · CNY</p><p class="muted" style="margin-top:8px">报名占位：<b>¥5,000</b>（报名占位金，具体以所选团期页面为准）</p><p class="muted" style="margin-top:6px">退损无忧：提前 30 日无理由全额退款（以商家规则为准）</p><h3 style="margin-top:18px">团费包含</h3><ul class="plain"><li>D2–D7 含三餐；D1 欢迎晚宴；D8 仅含早餐</li><li>阿鲁沙 Kibo Palace Hotel（或同级），D1、D7 各 1 晚</li><li>登山期间营地帐篷（约 5 晚）</li><li>机场接送、园区私人小巴</li><li>登山支援团队：向导、厨师、背夫</li><li>D7 庆功宴</li><li>园区门票、登山许可及相关行政费用（含在团费内）</li></ul><div class="card" style="margin-top:14px;background:#222d3d"><h3>登山小费</h3><p style="font-size:22px;font-weight:700;color:var(--gold)">约 $240/人</p><p class="muted" style="margin-top:8px">建议合计约 $240/人，行程结束发给向导、厨师、背夫等登山团队（现金，美元）。不含在团费内，为坦桑登山惯例。</p></div><h3 style="margin-top:18px">费用不含 / 另付</h3><table class="cost-table"><tr><td class="cost-label">登山小费</td><td class="cost-val">建议 $240/人（见上方说明）</td></tr><tr><td class="cost-label">大交通</td><td class="cost-val">往返阿鲁沙（JRO 机场）的国际机票及税费</td></tr><tr><td class="cost-label">个人消费</td><td class="cost-val">酒水饮料等；除部分餐厅/民宿/野餐已含茶水外</td></tr><tr><td class="cost-label">单房差</td><td class="cost-val">以领队群里通知为准</td></tr><tr><td class="cost-label">单帐差</td><td class="cost-val">¥1,600 / 5 晚（独自使用帐篷）</td></tr><tr><td class="cost-label">代订集合酒店</td><td class="cost-val">以领队群里通知为准</td></tr><tr><td class="cost-label">冲顶 1:1 向导</td><td class="cost-val">$100（可选升级）</td></tr><tr><td class="cost-label">签证</td><td class="cost-val">坦桑尼亚落地签/电子签约 $50</td></tr><tr><td class="cost-label">行程外税费</td><td class="cost-val">2024年11月起国际旅客入境坦桑尼亚机场缴纳 $90 税费（政策以届时为准）</td></tr><tr><td class="cost-label">行程外费用</td><td class="cost-val">行程以外的所有个人消费与延展项目</td></tr><tr><td class="cost-label">个人装备与保险</td><td class="cost-val">冲锋衣裤、睡袋内胆、旅行保险等</td></tr><tr><td class="cost-label">其他</td><td class="cost-val">因个人原因未完成全部行程或提前返回，视为自动放弃，团费不退</td></tr><tr><td class="cost-label">不可抗力</td><td class="cost-val">自然灾害、道路中断、政策变化等导致的额外费用</td></tr></table><p class="muted" style="margin-top:12px;font-size:12px">登山行李限重 20kg，建议软包。D8 午晚餐自理。</p></div></div>
+
+  <div id="gear" class="panel">
+    <div class="card">
+      <h3>衣物清单 · 7月长旱季 × 海拔带</h3>
+      <p class="muted" style="margin-bottom:14px">7月属坦桑 6–10 月长旱季，登顶条件最佳；但一日内从雨林闷热（1800m）到冲顶夜寒（-10°C 体感）跨度极大，核心策略是<strong>三层穿衣、随时可拆可叠</strong>。棉质衣物禁用于贴身层（排汗差、失温风险高）。</p>
+      <div class="gear-zone">
+        <h4>阿鲁沙 / 集结日 <span class="alt-tag">约 1400m · 20–25°C</span></h4>
+        <ul class="plain"><li>轻便长袖防晒衣、速干 T 恤、休闲长裤</li><li>薄外套（早晚略凉）、舒适便鞋</li></ul>
+      </div>
+      <div class="gear-zone">
+        <h4>雨林段 <span class="alt-tag">1800–3010m · 闷热潮湿 15–22°C</span></h4>
+        <ul class="plain"><li>速干排汗打底（长袖更佳，防蚊虫刮擦）</li><li>轻薄软壳或防风外套（雨林雾气大、午后易出汗）</li><li>速干徒步裤；高帮防水登山靴（需提前磨合 1–2 月）</li><li>遮阳帽、防晒霜 SPF50+、驱虫剂、薄手套</li><li>营地：抓绒衣 + 薄羽绒（3010m 夜间约 5–10°C）</li></ul>
+      </div>
+      <div class="gear-zone">
+        <h4>高原荒野 <span class="alt-tag">3845–4035m · 昼夜温差大</span></h4>
+        <ul class="plain"><li>排汗打底 + 抓绒/软壳 + 冲锋衣裤（防风防水）</li><li>羊毛或厚徒步袜（建议内衬薄袜 + 外厚袜）</li><li>保暖帽、围脖/脖套、太阳镜（紫外线极强）</li><li>营地夜间 0–5°C：薄羽绒或厚抓绒 + 睡袋内胆</li></ul>
+      </div>
+      <div class="gear-zone">
+        <h4>冲顶大本营 Barafu <span class="alt-tag">4673m · 干燥大风</span></h4>
+        <ul class="plain"><li>白天徒步：冲锋裤 + 抓绒 + 轻薄羽绒叠穿</li><li>午后至夜间：厚羽绒服（舒适温标 -15°C 左右，当地可租）</li><li>厚保暖帽、防风防水手套 + 连指羽绒手套</li><li>护目镜或雪镜（防风沙与强光）</li><li>睡袋舒适温标约 -10°C～-20°C（或睡袋内胆 + 营地配发睡袋）</li></ul>
+      </div>
+      <div class="gear-zone">
+        <h4>冲顶夜 D6 <span class="alt-tag">4673→5894m · 体感 -10°C～-20°C</span></h4>
+        <ul class="plain"><li>全套保暖叠穿：排汗打底 → 抓绒 → 薄羽绒 → 厚羽绒 → 冲锋外壳</li><li>头灯 + 备用电池（必备）、暖宝宝（手脚）</li><li>防水登山靴、厚羊毛袜；登山杖（上坡借力、下坡护膝）</li><li>2–3L 水具 + 电解质；能量胶/巧克力（向导会安排，自备少量备用）</li></ul>
+      </div>
+      <div class="gear-zone">
+        <h4>下撤段 Mweka <span class="alt-tag">3100→1640m · 湿暖雨林</span></h4>
+        <ul class="plain"><li>可逐层减衣；备雨衣或冲锋衣（雨林段泥泞湿滑）</li><li>护膝（长距离下降对膝盖负担大）</li></ul>
+      </div>
+    </div>
+    <div class="card">
+      <h3>其他装备</h3>
+      <ul class="plain"><li>20kg 以内软包行李（硬箱不可上挑夫背架）</li><li>日用背包 25–35L（当日衣物、水、防晒、雨具）</li><li>睡袋内胆（卫生 + 增温）、充气枕、耳塞</li><li>保温杯、湿巾、个人药品（止泻、止痛、创可贴；高反药遵医嘱）</li><li>充电宝、相机防护；现金美元（小费、落地签）</li></ul>
+      <p class="muted" style="margin-top:10px;font-size:12px">阿鲁沙行前说明会可检查装备；缺项可在 Moshi/阿鲁沙租赁（羽绒服、睡袋等），但卫生与尺码不如自备。国家公园内禁酒，酒精会加重高反。</p>
+    </div>
+  </div>
+
+  <div id="reviews" class="panel">
+    <div class="card">
+      <h3>用户评价</h3>
+
+      <p class="muted" style="margin-bottom:14px;font-size:13px;line-height:1.55">
+        <b>调研概览（2026-07-05）</b>：在小红书用 <b>15 组</b>关键词检索（含威士忌线避坑、向导、旅行社、阿鲁沙等），浏览 <b>356 条</b>列表结果（仅保留 2025-01-01 以来、威士忌线/Machame 相关）；逐条打开验证 <b>199 篇</b>，<b>195 篇</b>可正常阅读，<b>4 篇</b>需 App/已下架。共抓取 <b>2236 条</b>评论（目标每篇前 100 条；网页端懒加载上限约 96 条，均值 11 条/篇）。
+      </p>
+
+      <div class="review-block" style="border-bottom:none;padding-bottom:0">
+        <h4>综合推荐</h4>
+        <div class="review-score-wrap">
+          <div>
+            <div class="review-score-big">7.8<span style="font-size:16px;color:var(--muted);font-weight:500"> / 10</span></div>
+            <p class="muted" style="font-size:12px;margin-top:4px;max-width:220px">评的是「7 月底走威士忌线冲顶」这件事值不值得；不是给某一家旅行社打分。</p>
+          </div>
+          <div class="review-dim">
+            <div class="review-dim-row"><span>风景与体验感</span><span>9.0</span></div>
+            <div class="review-dim-bar"><i style="width:90%"></i></div>
+            <div class="review-dim-row"><span>有趣程度</span><span>8.5</span></div>
+            <div class="review-dim-bar"><i style="width:85%"></i></div>
+            <div class="review-dim-row"><span>挑战性（体力+高反）</span><span>8.0</span></div>
+            <div class="review-dim-bar"><i class="gold" style="width:80%"></i></div>
+            <div class="review-dim-row"><span>正面口碑</span><span>8.0</span></div>
+            <div class="review-dim-bar"><i style="width:80%"></i></div>
+            <div class="review-dim-row"><span>负面/踩坑风险</span><span>6.0</span></div>
+            <div class="review-dim-bar"><i class="warn" style="width:60%"></i></div>
+          </div>
+        </div>
+        <p style="font-size:13px;line-height:1.6;color:var(--ink)">
+          <b>一句话</b>：7 月旱季走威士忌线，195 篇可读笔记里压倒性是「值得、难忘、风景超值」；真正劝退的通常不是累，而是<b>高反和冲顶夜</b>。选团比选路线更难——落地体验多半取决于<strong>当地主向导</strong>，而不是国内旅行社的广告。
+        </p>
+      </div>
+
+      <div class="review-block">
+        <h4>体验关键词</h4>
+        <div class="review-kw">
+          <span>Pole Pole 慢走</span>
+          <span>高反 &gt; 体能</span>
+          <span>雨林→荒原→冰川</span>
+          <span>向导/背夫服务好</span>
+          <span>营地氛围</span>
+          <span>冲顶夜很冷很长</span>
+          <span>Barranco 最美营地</span>
+          <span>攀高睡低</span>
+          <span>7 月能见度好</span>
+          <span class="neg">下撤废膝盖</span>
+          <span class="neg">恐高手脚并用</span>
+          <span class="neg">可能无法登顶</span>
+          <span class="neg">低价团缩水</span>
+        </div>
+      </div>
+
+      <div class="review-block">
+        <h4>大家主要在说什么</h4>
+        <ul class="plain">
+          <li><b>值得去</b>：95 篇明确写威士忌/Machame 的笔记里，高频词是风景层次、一生一次、赤道雪山；7 月登顶记录仍可见，旱季能见度评价偏正面。</li>
+          <li><b>服务超预期</b>：1142 赞的「希望这个向导多赚点」、2340 赞的长文都把 Chief Guide 和 crew 当成体验核心；背夫先到营地、送热水、唱歌道别是情绪价值来源。</li>
+          <li><b>难在海拔，不在技术</b>：43 篇笔记 + 评论提到高反；冲顶夜 12–15 小时、停步即冷是共识；Pole Pole、多喝水、听向导是高频建议。</li>
+          <li><b>膝盖和恐高</b>：Barranco 岩壁手脚并用、冲顶后长距离下山——护膝和登山杖在评论里反复出现。</li>
+          <li><b>旅行社水很深</b>：当地 $1200–1500 与 ¥2 万国内轻奢团并存；评论里常见「问清公园费、小费、向导配比」——<b>最低价往往意味着安全预案缩水</b>。</li>
+          <li><b>国内团「徒步帮」</b>：15 组关键词下仍<b>没有</b>队员写的「跟徒步帮走威士忌线」独立长评；可见的是徒步中国账号的攻略片/排期帖（4 篇），属官方宣传，不能当第三方口碑。</li>
+        </ul>
+      </div>
+
+      <div class="review-block">
+        <h4>实用攻略 · 避坑 · 风险</h4>
+        <ul class="plain">
+          <li><b>行前</b>：登山靴提前磨合；软包行李 ≤20kg；睡袋保暖要够（冲顶营地很冷）；每天计划喝 3–4L 水；防晒从头到脚。</li>
+          <li><b>高反</b>：乙酰唑胺等药物需遵医嘱；到 Lava Tower 适应后尽快下到 Barranco，别在高处久留；营地别喝酒、别熬夜聊天。</li>
+          <li><b>冲顶夜</b>：厚羽绒 + 硬壳；头灯备用电池；能量胶/零食带足；吸氧通常意味着放弃冲顶，提前有心理预期。</li>
+          <li><b>避坑</b>：别拿「1250 刀穷鬼团」和 ¥19,800 轻奢团比；问清楚含不含公园费、小费、冲顶日是否 1 位向导盯 1 人、有没有医疗下撤；Gate 登记可能拖到下午才出发，行程别排太死。</li>
+          <li><b>当地社 DIY</b>：评论里有人推荐 Moshi 的 Climbers Home 等住宿联络当地向导；优势是省钱，劣势是远程甄别难、合同与付款风险自担。</li>
+          <li><b>心态</b>：接受「登顶不是唯一成功」——高反、天气、向导判断都可能导致下撤，这在 2236 条评论讨论里越来越被正视。</li>
+        </ul>
+      </div>
+
+      <div class="review-block review-qa">
+        <h4>重点关注问题</h4>
+
+        <h5>1. 7月底威士忌线冲顶：DIY选当地旅行社还是选国内旅行社？</h5>
+        <ul class="plain">
+          <li><b>当地社</b>：价格通常更低，直接对接 Moshi/阿鲁沙的登山公司；优势是钱更多花在山上；劣势是远程沟通、合同与付款风险要自己扛，且你不懂当地市场时很难分辨「低价=cut 服务」。</li>
+          <li><b>国内社</b>：优势是中文沟通、成团省心、发票与合同；劣势是溢价里含渠道与领队成本，<b>落地后仍是当地向导团队执行</b>——买国内团不等于买到更好的 Chief Guide，除非对方愿意书面承诺领队资质并披露当地合作方。</li>
+          <li><b>建议评估顺序</b>（比单纯比价钱重要）：① 主向导资质与是否全程跟队 → ② 是否 8 天含 Karanga（比 6–7 天更利于适应）→ ③ 冲顶日向导:队员比例、有无 1:1 升级 → ④ 医疗/氧气/直升机下撤预案 → ⑤ 登顶率与近期下撤案例（要求对方给队员联系方式）→ ⑥ 价格是否含公园费、小费指引、单房差 → ⑦ 是否 KPAP 相关 ethical 运营（背夫装备与工资）。</li>
+          <li><b>找当地靠谱社</b>：<a href="https://www.tripadvisor.com/Attractions-g317084-Activities-c42-t235-Kilimanjaro_National_Park_Kilimanjaro_Region.html" target="_blank" rel="noopener">TripAdvisor · Kilimanjaro 运营商</a>、<a href="https://www.safaribookings.com/kilimanjaro" target="_blank" rel="noopener">SafariBookings</a> 看低分评价具体原因；在背包客论坛搜公司名 +「kilimanjaro」；优先 Moshi 本地经营多年、评价量足的公司，警惕过低报价。</li>
+        </ul>
+        <p style="font-size:12px;color:var(--muted);margin-top:6px">对本团期：7 月底是旱季窗口，季节加分；你选的国内「徒步帮」¥19,800 轻奢位属于「买省心」，但仍建议按上面清单逐项书面确认当地执行方。</p>
+
+        <h5>2. 如果选国内旅行社，哪些比较靠谱？</h5>
+        <ul class="plain">
+          <li><b>小红书能确认的</b>：「徒步中国/徒步帮」持续发乞力马扎罗内容（攻略片、纪录片、排期帖），说明<b>在卖这条线</b>，但<b>找不到独立队员写的徒步帮威士忌线长评</b>，无法从社区口碑断言「综合最好」。</li>
+          <li><b>怎么判断国内社是否靠谱</b>（通用）：要同线路近 2–3 期队员微信/笔记链接；看是否披露当地合作登山公司英文名；合同里写清下撤与退款；问中文领队是否全程上山还是仅机场/阿鲁沙地接。</li>
+          <li><b>横向对比</b>：游侠客、徒步中国等有非洲登山品类，但各家的「靠谱」差异仍在<b>当期当地向导</b>。没有「闭眼选一家全国最好」的共识——<b>当期领队 + 当地 Chief Guide 比品牌名更重要</b>。</li>
+          <li><b>对你这团</b>：徒步帮有赞旗舰店、45 万粉自媒体背景，擅长内容与成团；报名前最该追问的是：<em>本团 7/25 批次当地主向导是谁、往年同批登顶率、有无高反下撤案例</em>。</li>
+        </ul>
+
+        <h5>3. 容易高反的人，8 天 7 夜威士忌线怎么克服挑战？</h5>
+        <ul class="plain">
+          <li><b>路线本身对你有利</b>：8 天含 Karanga 过渡，比 6 天压缩版更利于适应；威士忌线「攀高睡低」（如 Lava Tower 午餐后下到 Barranco）是公认减高反策略——选 8 天版是对的。</li>
+          <li><b>行前</b>：提前 4–6 周有氧（爬楼、负重走）；遵医嘱考虑乙酰唑胺，并了解副作用（多尿、手指麻）；有高反史的人更要把预期调成「保平安下撤也算成功」。</li>
+          <li><b>山上纪律</b>：向导说慢就慢（Pole Pole）；每天足量喝水；在高营地少说话、早睡觉；别在营地喝酒或兴奋蹦跳。</li>
+          <li><b>关键日</b>：D4 攀高睡低当天最考验状态——到高处适应后尽快下降，别逞强久留；冲顶夜若血氧持续很差，听向导劝下撤，比硬顶安全。</li>
+          <li><b>装备辅助</b>：保暖不足会加重高反感；睡袋、羽绒、暖宝宝、护膝对恢复有帮助；冲顶日带足热量。</li>
+          <li><b>现实预期</b>：高反与体能不完全相关，体能好也可能高反；社区共识是<b>高反是这条线第一大难点</b>，其次才是体力和膝盖。8 天比 6 天成功率高，但不保证零高反。</li>
+        </ul>
+      </div>
+
+      <div class="review-block">
+        <h4>代表笔记（已验证可打开 · 威士忌线优先）</h4>
+        <table class="review-notes-table">
+          <thead>
+            <tr><th>笔记</th><th>点赞</th><th>日期</th><th>已读评论</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><a href="https://www.xiaohongshu.com/explore/69315038000000001e0245f4?xsec_token=ABWdjLaAs_RQqUK6zB0ztHj_bzPPbCsSH7AuYQ1Y3aSBw=&xsec_source=" target="_blank" rel="noopener">只要我们还能被远方打动，世界就无限辽阔。</a></td><td>2340</td><td>2025-12</td><td>96</td></tr>
+            <tr><td><a href="https://www.xiaohongshu.com/explore/6980a5d0000000000a03fb4f?xsec_token=ABrAaqlre0GT09iHjUI8NjPloO84FUyST19DPIZU4ovEg=&xsec_source=" target="_blank" rel="noopener">乞力马扎罗攀登Machame第一天</a></td><td>1689</td><td>2026-02</td><td>48</td></tr>
+            <tr><td><a href="https://www.xiaohongshu.com/explore/68dd539300000000040046aa?xsec_token=ABqRV4QYlcEwWQsAef_3mBw9K3nhBWh1PPaIiRH8bZTrk=&xsec_source=" target="_blank" rel="noopener">乞力马扎罗，如果可以我希望这个向导多赚点</a></td><td>1142</td><td>2025-10</td><td>48</td></tr>
+            <tr><td><a href="https://www.xiaohongshu.com/explore/68b95a8b000000001b036e58?xsec_token=ABTxO-30ngBL5_LZcKGL6IzybqLcfgDVyYNq8dk7zTG78=&xsec_source=" target="_blank" rel="noopener">挑战全网最全攻略，10分钟看完攀登全程！</a></td><td>645</td><td>2025-09</td><td>33</td></tr>
+            <tr><td><a href="https://www.xiaohongshu.com/explore/6a2a139e000000001702dfca?xsec_token=AB6Q2op0ApcXxM-vb4ZOdU7L7HZudSo2AwFtyQQMFkQ6o=&xsec_source=" target="_blank" rel="noopener">非洲之巅·乞力马扎罗｜5895米看到赤道雪</a></td><td>620</td><td>2026-06</td><td>1</td></tr>
+            <tr><td><a href="https://www.xiaohongshu.com/explore/68821651000000000d01b210?xsec_token=AB7xUX9Hx6P2vJmv5YAXrgaWnhVAdb9wNE6aNO0CqDhGM=&xsec_source=" target="_blank" rel="noopener">乞力马扎罗穿搭指南</a></td><td>471</td><td>2025-07</td><td>28</td></tr>
+            <tr><td><a href="https://www.xiaohongshu.com/explore/68dc74cf000000000301c679?xsec_token=AB-5wbtqra1E7OuytCRelzYPWLzIA9nh3897wNnza-6ow=&xsec_source=" target="_blank" rel="noopener">爬乞力马扎罗👰🏻‍♀️顺手拍个婚纱照</a></td><td>292</td><td>2025-10</td><td>23</td></tr>
+            <tr><td><a href="https://www.xiaohongshu.com/explore/69ae87ed000000001d012af2?xsec_token=ABdHlk5FTS7e9YGkPI7mnMlQuZoVXU8EoxSqJWl3Li00A=&xsec_source=" target="_blank" rel="noopener">乞力马扎罗🏔️超全攻略！</a></td><td>278</td><td>2026-03</td><td>19</td></tr>
+            <tr><td><a href="https://www.xiaohongshu.com/explore/67e825cf000000001d02720f?xsec_token=ABbg19SzNKnFaaTIvX_raWuKY0zn3QYUn0LwQv665dHbk=&xsec_source=" target="_blank" rel="noopener">乞力马扎罗——威士忌线🥃Machame</a></td><td>275</td><td>2025-03</td><td>39</td></tr>
+            <tr><td><a href="https://www.xiaohongshu.com/explore/698d907e000000000a030cfc?xsec_token=ABdWn_7rJy6trbQtXsqTFpTsfBuSX4K7EPM9bIUqIQVmM=&xsec_source=" target="_blank" rel="noopener">26岁的第一天，我登上了乞力马扎罗⛰️</a></td><td>251</td><td>2026-02</td><td>16</td></tr>
+            <tr><td><a href="https://www.uscardforum.com/t/topic/350529" target="_blank" rel="noopener">美卡论坛 · 2024 年 7 月 Machame 登顶记</a></td><td>—</td><td>2024-07</td><td>对照</td></tr>
+          </tbody>
+        </table>
+        <p class="muted" style="font-size:11px;margin-top:8px">另有 4 篇威士忌相关笔记因 App 扫码墙或下架未能打开，未列入上表。</p>
+        <p class="review-src">小红书检索：乞力马扎罗 威士忌线 · 乞力马扎罗 Machame · 威士忌线 乞力马扎罗 · 威士忌线 克服高海拔 · 威士忌线 避坑指南 · 威士忌线 实用信息 · 威士忌线 向导 · 威士忌线 旅行社 · 威士忌线 阿鲁沙靠谱旅行社 · 乞力马扎罗 徒步帮 · 乞力马扎罗 徒步中国 · 徒步帮旅行 乞力马扎罗 威士忌 · 乞力马扎罗 威士忌线 高反 · Machame 威士忌线 登顶 · 威士忌线 冲顶 7月 · 2026-07-05</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="prep" class="panel">
+    <div class="card">
+      <h3>准备时间线</h3>
+      <p class="muted" style="margin-bottom:12px">以 <b>2026 年 7 月 1 日</b> 开始准备、<b>7 月 25 日</b> 出发（D1 抵达 JRO）为锚点，共 <b>24 天</b>。下表按时间顺序排列「计划完成日」与「最晚完成日」，耗时含办理周期与缓冲。</p>
+      <div class="prep-hero">
+        <div class="prep-d-day">7 月 1 日 → 7 月 25 日</div>
+        <div class="prep-d-sub">准备期 24 天 · 靴子磨合与体能窗口偏紧，第 1 周需集中办完证件与机票</div>
+      </div>
+
+      <table class="prep-table">
+        <thead><tr><th>准备事项</th><th>计划完成</th><th>最晚完成</th><th>耗时说明</th></tr></thead>
+        <tbody>
+          <tr class="prep-urgent"><td class="prep-item" data-label="事项">确认报名 · 支付占位金 ¥5,000</td><td class="prep-date rec" data-label="计划">7 月 1 日</td><td class="prep-date" data-label="最晚">7 月 3 日</td><td class="prep-dur" data-label="耗时">下单即时～3 日确认；先占位再办其余事项</td></tr>
+          <tr class="prep-urgent"><td class="prep-item" data-label="事项">国际机票（往返 JRO）</td><td class="prep-date rec" data-label="计划">7 月 1 日</td><td class="prep-date" data-label="最晚">7 月 5 日</td><td class="prep-dur" data-label="耗时">当日可出票；联程留转机 ≥3h；建议 7 月 24 日出发、25 日抵达</td></tr>
+          <tr class="prep-urgent"><td class="prep-item" data-label="事项">坦桑尼亚电子签证</td><td class="prep-date rec" data-label="计划">7 月 1–2 日</td><td class="prep-date" data-label="最晚">7 月 12 日</td><td class="prep-dur" data-label="耗时">官网申请 1–10 个工作日；亦可选落地签 $50，电子签入关更快</td></tr>
+          <tr class="prep-urgent"><td class="prep-item" data-label="事项">户外旅行保险（含高原徒步）</td><td class="prep-date rec" data-label="计划">7 月 1 日</td><td class="prep-date" data-label="最晚">7 月 8 日</td><td class="prep-dur" data-label="耗时">在线投保即时生效；确认覆盖 5894m 徒步与医疗转运</td></tr>
+          <tr class="prep-urgent"><td class="prep-item" data-label="事项">登山靴（购买或确认已有）</td><td class="prep-date rec" data-label="计划">7 月 1–3 日</td><td class="prep-date" data-label="最晚">7 月 5 日</td><td class="prep-dur" data-label="耗时">理想磨合 4–8 周，现仅余 3 周；优先线下试穿当日取货，此后每日穿 1–2h</td></tr>
+          <tr><td class="prep-item" data-label="事项">冲锋衣/羽绒/睡袋内胆等装备采购</td><td class="prep-date rec" data-label="计划">7 月 2–4 日</td><td class="prep-date" data-label="最晚">7 月 10 日</td><td class="prep-dur" data-label="耗时">自营快递 3–5 日；厚羽绒可落地阿鲁沙租赁，关键贴身层建议自备</td></tr>
+          <tr><td class="prep-item" data-label="事项">体能训练（有氧为主）</td><td class="prep-date rec" data-label="计划">7 月 1 日起</td><td class="prep-date" data-label="最晚">持续至 7 月 24 日</td><td class="prep-dur" data-label="耗时">短周期强化：每周 3 次 30min 有氧 + 周末 1 次 8–12km 爬升徒步</td></tr>
+          <tr><td class="prep-item" data-label="事项">疫苗咨询 / 行前体检</td><td class="prep-date rec" data-label="计划">7 月 3–5 日</td><td class="prep-date" data-label="最晚">7 月 8 日</td><td class="prep-dur" data-label="耗时">门诊 1 次；直飞不经疫区通常不需黄热病疫苗</td></tr>
+          <tr><td class="prep-item" data-label="事项">高反用药咨询（如乙酰唑胺）</td><td class="prep-date rec" data-label="计划">7 月 8–10 日</td><td class="prep-date" data-label="最晚">7 月 15 日</td><td class="prep-dur" data-label="耗时">遵医嘱；如需试服留 3–5 日观察副作用</td></tr>
+          <tr><td class="prep-item" data-label="事项">装备到货 · 试穿磨合打包试重</td><td class="prep-date rec" data-label="计划">7 月 8–10 日</td><td class="prep-date" data-label="最晚">7 月 12 日</td><td class="prep-dur" data-label="耗时">到货后逐件试穿；软包试装 ≤20kg，留退换货时间</td></tr>
+          <tr><td class="prep-item" data-label="事项">兑换美元现金（小费+签证+税费）</td><td class="prep-date rec" data-label="计划">7 月 12–15 日</td><td class="prep-date" data-label="最晚">7 月 22 日</td><td class="prep-dur" data-label="耗时">约 $380/人：小费 $240 + 签证 $50 + 机场税 $90；银行预约 1–2 日</td></tr>
+          <tr><td class="prep-item" data-label="事项">行李终装 · 20kg 软包称重</td><td class="prep-date rec" data-label="计划">7 月 18–20 日</td><td class="prep-date" data-label="最晚">7 月 22 日</td><td class="prep-dur" data-label="耗时">硬箱不可上挑夫背架；留 1–2 日补缺</td></tr>
+          <tr><td class="prep-item" data-label="事项">加入领队群 · 确认集合/房差信息</td><td class="prep-date rec" data-label="计划">7 月 20 日</td><td class="prep-date" data-label="最晚">7 月 24 日</td><td class="prep-dur" data-label="耗时">出发前 3–5 日发通知；单房差/单帐差以群公告为准</td></tr>
+          <tr><td class="prep-item" data-label="事项">打印材料（护照/签证/保险/机票）</td><td class="prep-date rec" data-label="计划">7 月 22 日</td><td class="prep-date" data-label="最晚">7 月 24 日</td><td class="prep-dur" data-label="耗时">各 1 份纸质备份 + 手机相册存扫描件</td></tr>
+          <tr><td class="prep-item" data-label="事项">出发 · 飞往坦桑尼亚</td><td class="prep-date rec" data-label="计划">7 月 24 日</td><td class="prep-date" data-label="最晚">7 月 25 日上午</td><td class="prep-dur" data-label="耗时">长航线建议提前 1 日出发；D1 接机后阿鲁沙装备终审</td></tr>
+        </tbody>
+      </table>
+
+      <div class="prep-milestone">
+        <b>退改节点</b>（以商家规则为准）：7 月 15 日（出发前 10 日）后定金通常不退；7 月 22 日（出发前 3 日）内取消可能扣 50% 团费。
+      </div>
+
+      <h3 style="margin-top:18px">分周节奏（7 月 1 日起）</h3>
+      <ul class="plain">
+        <li><b>第 1 周（7/1–7/6）</b>：报名、机票、签证、保险、靴子到手；装备下单；训练启动</li>
+        <li><b>第 2 周（7/7–7/13）</b>：装备到货试穿、体检与高反药咨询、每日穿靴；周末一次徒步</li>
+        <li><b>第 3 周（7/14–7/20）</b>：换汇美元、行李试装称重、入领队群确认房差</li>
+        <li><b>第 4 周（7/21–7/25）</b>：打印材料、最终打包、7/24 出发；D1 行前说明会与装备检查</li>
+      </ul>
+      <p class="muted" style="margin-top:10px;font-size:12px">24 天准备期可完成行政与物资，但靴子磨合与体能储备弱于常规 8–12 周方案；若已有登山靴且近期有徒步基础，风险可控。</p>
+    </div>
+  </div>
+
+  <div id="flights" class="panel">
+    <div class="card">
+      <h3>往返交通 · 北京 + 深圳 → JRO</h3>
+      <p class="muted" style="margin-bottom:12px">两人<b>不必中转汇合</b>，各自选性价比最高的联程即可；只需保证 <b>7 月 25 日同日抵达 JRO</b>（团方接机）。国内无直飞，须一次中转；<b>终点订 JRO</b>，勿只飞 DAR 再单买内陆段。</p>
+
+      <div class="prep-hero" style="margin-bottom:14px">
+        <div class="prep-d-day">去程 · 7/24–25 抵达 JRO</div>
+        <div class="prep-d-sub">返程 · 8/1 午后起自 JRO（D7 庆功宴在阿鲁沙，勿订 8/1 清晨航班）</div>
+      </div>
+
+      <h3 style="margin-bottom:10px">中转枢纽 · 性价比排序</h3>
+      <p class="muted" style="margin-bottom:10px;font-size:12px">7 月属旱季旺季，往返经济舱参考 <b>¥6,000–17,000/人</b>（联程至 JRO）。以下为常见枢纽从「省钱」到「舒适」的大致梯度，具体以 7 月 1 日比价为准。</p>
+
+      <table class="prep-table">
+        <thead><tr><th>枢纽</th><th>航司</th><th>性价比</th><th>时长</th><th>要点</th></tr></thead>
+        <tbody>
+          <tr class="prep-urgent"><td class="prep-item" data-label="枢纽">亚的斯亚贝巴 ADD</td><td data-label="航司">埃塞俄比亚 ET</td><td class="prep-date" data-label="性价比">★★★★★</td><td class="prep-date" data-label="时长">17–22h</td><td class="prep-dur" data-label="要点">常年最低价梯队；联程行李直挂 JRO；北京每日有班</td></tr>
+          <tr><td class="prep-item" data-label="枢纽">伊斯坦布尔 IST</td><td data-label="航司">土耳其 TK</td><td class="prep-date" data-label="性价比">★★★★</td><td class="prep-date" data-label="时长">19–23h</td><td class="prep-dur" data-label="要点">促销时接近埃航；<b>IST 中转可能需自取行李</b>，订票时确认直挂</td></tr>
+          <tr><td class="prep-item" data-label="枢纽">多哈 DOH</td><td data-label="航司">卡塔尔 QR</td><td class="prep-date" data-label="性价比">★★★</td><td class="prep-date" data-label="时长">18–24h</td><td class="prep-dur" data-label="要点">票价中等偏上，服务与衔接稳定；DOH→JRO 班次多，行李直挂</td></tr>
+          <tr><td class="prep-item" data-label="枢纽">迪拜 DXB</td><td data-label="航司">阿联酋 EK</td><td class="prep-date" data-label="性价比">★★★</td><td class="prep-date" data-label="时长">18–24h</td><td class="prep-dur" data-label="要点">行李额宽裕（常 3×23kg），票价通常高于 ET/TK</td></tr>
+          <tr><td class="prep-item" data-label="枢纽">内罗毕 NBO</td><td data-label="航司">肯尼亚 KQ</td><td class="prep-date" data-label="性价比">★★★</td><td class="prep-date" data-label="时长">18–26h</td><td class="prep-dur" data-label="要点">偶有低价联程；NBO→JRO 短途，确认是否一票联程</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:18px;margin-bottom:10px">分城推荐 · 各选最优</h3>
+
+      <div class="flight-opt rec">
+        <h4>北京出发 <span class="flight-badge">性价比优先</span></h4>
+        <p class="flight-route"><b>首选</b> PEK/PKX → ADD → JRO（埃航 ET）· 约 17h35m，每日，转机约 3h45m<br><b>比价</b> PEK → IST → JRO（土航 TK）· 约 20h45m，班次较少（如周三/五）<br><b>舒适备选</b> PEK → DOH/DXB → JRO（QR / EK）</p>
+        <p class="flight-meta">北京国际航线多，通常<b>直接搜 PEK/PKX→JRO 联程</b>即可，埃航往往最低；不必为省钱先飞深圳/广州。</p>
+      </div>
+
+      <div class="flight-opt rec">
+        <h4>深圳出发 <span class="flight-badge">性价比优先</span></h4>
+        <p class="flight-route"><b>首选</b> 广州 CAN → ADD → JRO（埃航 ET 联程；SZX 高铁至 CAN 约 30min）<br><b>比价</b> 香港 HKG → ADD/DOH → JRO（ET / QR；SZX 高铁至西九龙约 15min）<br><b>备选</b> SZX → PEK/PVG 隔夜转机 → ADD → JRO（仅当总价比 CAN/HKG 低 ¥500+ 才值得）</p>
+        <p class="flight-meta">SZX 国际直飞少，<b>先比 CAN 与 HKG 两条出境口的 ET/QR 联程</b>；广深高铁成本低，不必两人同口出境。</p>
+      </div>
+
+      <h3 style="margin-top:18px;margin-bottom:10px">省钱购票技巧</h3>
+      <ul class="plain">
+        <li><b>联程一票至 JRO</b>：同一订单出票，行李直挂；自组两段独立票误机风险大</li>
+        <li><b>多渠道比价</b>：Google Flights（看整月低价）→ 携程 / 飞猪 → 埃航 / 土航官网；7 月 1 日内下单</li>
+        <li><b>日期弹性</b>：去程 ±1 天、返程 ±1 天各查一遍，旺季差千元常见</li>
+        <li><b>红眼衔接</b>：埃航 ADD 午夜航班衔接 JRO 上午到达，总耗时短且票价常更低</li>
+        <li><b>慎选欧洲枢纽</b>：阿姆斯特丹 / 巴黎绕远，除非比 ADD 低 20% 以上</li>
+        <li><b>DAR 备选</b>：仅当 JRO 联程贵 ¥2,000+ 时，查 DAR 联程 + Precision Air 内陆段比价</li>
+      </ul>
+
+      <h3 style="margin-top:18px;margin-bottom:10px">行程衔接</h3>
+      <ul class="plain">
+        <li><b>去程</b>：7/23 晚或 7/24 出发，<b>7/25 14:00 前</b>落地 JRO（接机 + 阿鲁沙入住 + 说明会）</li>
+        <li><b>返程</b>：8/1 15:00 后 JRO 起飞较稳妥；埃航 ET 回程常见 17:00 左右 JRO 起飞</li>
+        <li><b>转机</b>：国际转国际 ≥3h；不必两人同枢纽，但落地时间差建议 &lt;3h 方便接机</li>
+        <li><b>行李</b>：登山软包 20kg；ET/QR 经济舱多为 2×23kg，确认全程直挂</li>
+        <li><b>出票后</b>：各自把航班号 / 落地时间发领队，确认接机时段即可</li>
+      </ul>
+
+      <p class="review-src" style="margin-top:12px">检索参考（2026-06-28）：<a href="https://www.flightroutes.com/PEK-JRO" target="_blank" rel="noopener">FlightRoutes PEK–JRO</a> · <a href="https://www.tanzania.cn/guide/flight/" target="_blank" rel="noopener">坦桑尼亚旅行网 · 航班指南</a> · <a href="https://www.efindtravel.com/guide/flight/" target="_blank" rel="noopener">EFIND · 坦桑航班攻略</a> · 票价以实际查询为准</p>
+    </div>
+  </div>
+
+  
+
+  <div id="dates" class="panel"><div class="card"><h3>团期对比结论</h3><p class="muted">7月属长旱季，登顶条件最佳；若指2026-07-25则准备时间极紧。元旦跨年处于短雨季末，天气与能见度弱于7月。</p><p style="margin-top:10px;color:var(--accent)">倾向推荐：<b>7月25日</b> · 坦桑尼亚为未涉足国家 +2</p></div><div class="eval-card"><div class="eval-head"><span class="eval-title">7月25日</span><span class="eval-score">72<small>/100</small></span></div><div class="eval-bars"><span>季节 9.2</span><span>准备时间 3.5</span><span>请假成本 7.0</span><span>体验 9.0</span></div><p class="eval-verdict">季节最佳；2026年档期需确认是否来得及办签与备货</p></div><div class="eval-card"><div class="eval-head"><span class="eval-title">元旦跨年</span><span class="eval-score">68<small>/100</small></span></div><div class="eval-bars"><span>季节 6.8</span><span>准备时间 8.5</span><span>请假成本 5.5</span><span>体验 8.2</span></div><p class="eval-verdict">准备更充裕，但年末云雨与节庆溢价需权衡</p></div></div>
+
+  <div id="serengeti" class="panel">
+    <div class="card safari-overview">
+      <h3>北线游猎 · 总体概览</h3>
+      <p class="muted" style="margin-bottom:4px">在登山 D7（7/31）傍晚回到<strong>阿鲁沙</strong>后，可选择不乘 D8（8/1）送机，改为北部游猎延展。典型设计是<strong>阿鲁沙出发 → 恩戈罗恩戈罗火山口 → 塞伦盖蒂大草原 → 回阿鲁沙 → JRO 离境</strong>的闭环，全程由 4×4 越野车 + 司机向导带队，住 lodge 或帐篷营地。</p>
+
+      <div class="safari-metrics">
+        <div class="safari-metric"><b>阿鲁沙 ↔ JRO</b><span>起终点 · 枢纽</span></div>
+        <div class="safari-metric"><b>4–6 天</b><span>延展总时长（含休整）</span></div>
+        <div class="safari-metric"><b>3–4 游猎日</b><span>推荐方案 B</span></div>
+        <div class="safari-metric"><b>7 月旱季</b><span>迁徙北移 · 全年最佳窗</span></div>
+      </div>
+
+      <h3 style="font-size:14px;margin-bottom:8px">全旅程时间轴（登山 + 可选游猎）</h3>
+      <div class="journey-strip">
+        <div class="journey-seg"><b>7/25–8/1</b>登山 8 日<div class="jsub">JRO→Machame→登顶→阿鲁沙</div></div>
+        <div class="journey-arrow">→</div>
+        <div class="journey-seg junction"><b>8/1 衔接点</b><div class="jsub">阿鲁沙休整 · 原 D8 送机改期</div></div>
+        <div class="journey-arrow">→</div>
+        <div class="journey-seg optional"><b>8/2–8/5</b>北线游猎<div class="jsub">塞伦盖蒂 + 恩戈罗</div></div>
+        <div class="journey-arrow">→</div>
+        <div class="journey-seg"><b>8/6</b>回国<div class="jsub">JRO 国际航班</div></div>
+      </div>
+
+      <h3 style="font-size:14px;margin:14px 0 8px">路线怎么设计（推荐方案 B）</h3>
+      <div class="route-schematic">
+        <svg viewBox="0 0 720 120" role="img" aria-label="北部游猎路线示意">
+          <defs>
+            <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="#8b9cb3"/>
+            </marker>
+          </defs>
+          <line x1="70" y1="55" x2="200" y2="55" stroke="#2dd4a8" stroke-width="3" marker-end="url(#arr)"/>
+          <line x1="230" y1="55" x2="400" y2="55" stroke="#f0b429" stroke-width="3" marker-end="url(#arr)"/>
+          <line x1="430" y1="55" x2="580" y2="55" stroke="#f0b429" stroke-width="3" marker-end="url(#arr)"/>
+          <line x1="610" y1="55" x2="660" y2="55" stroke="#8b9cb3" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+          <circle cx="50" cy="55" r="14" fill="#1a6b5a" stroke="#2dd4a8" stroke-width="2"/>
+          <text x="50" y="59" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">起</text>
+          <text x="50" y="88" text-anchor="middle" fill="#8b9cb3" font-size="10">阿鲁沙</text>
+          <text x="50" y="100" text-anchor="middle" fill="#8b9cb3" font-size="9">8/1 休整</text>
+          <circle cx="215" cy="55" r="12" fill="#222d3d" stroke="#2dd4a8" stroke-width="2"/>
+          <text x="215" y="88" text-anchor="middle" fill="#e8edf4" font-size="10">途中</text>
+          <text x="215" y="100" text-anchor="middle" fill="#8b9cb3" font-size="9">8/2 · 4–5h</text>
+          <circle cx="415" cy="55" r="16" fill="#3d3010" stroke="#f0b429" stroke-width="2"/>
+          <text x="415" y="59" text-anchor="middle" fill="#f0b429" font-size="8" font-weight="700">核心</text>
+          <text x="415" y="88" text-anchor="middle" fill="#f0b429" font-size="10">塞伦盖蒂</text>
+          <text x="415" y="100" text-anchor="middle" fill="#8b9cb3" font-size="9">8/3–4 · 迁徙</text>
+          <circle cx="595" cy="55" r="14" fill="#2c5a8a" stroke="#4dabf7" stroke-width="2"/>
+          <text x="595" y="88" text-anchor="middle" fill="#e8edf4" font-size="10">恩戈罗</text>
+          <text x="595" y="100" text-anchor="middle" fill="#8b9cb3" font-size="9">8/5 · 火山口</text>
+          <circle cx="680" cy="55" r="12" fill="#1a2332" stroke="#8b9cb3" stroke-width="2"/>
+          <text x="680" y="59" text-anchor="middle" fill="#8b9cb3" font-size="8">终</text>
+          <text x="680" y="88" text-anchor="middle" fill="#8b9cb3" font-size="10">JRO</text>
+          <text x="680" y="100" text-anchor="middle" fill="#8b9cb3" font-size="9">8/6 回国</text>
+          <text x="135" y="42" text-anchor="middle" fill="#8b9cb3" font-size="9">驱车进入</text>
+          <text x="315" y="42" text-anchor="middle" fill="#8b9cb3" font-size="9">2 全日游猎</text>
+          <text x="505" y="42" text-anchor="middle" fill="#8b9cb3" font-size="9">下陷游猎 1 日</text>
+          <text x="640" y="42" text-anchor="middle" fill="#8b9cb3" font-size="9">傍晚回阿鲁沙</text>
+        </svg>
+        <div class="rs-caption">
+          <span><i class="rs-dot" style="background:#2dd4a8"></i>枢纽 · 阿鲁沙 / JRO（相距约 1h）</span>
+          <span><i class="rs-dot" style="background:#f0b429"></i>核心体验 · 塞伦盖蒂大草原</span>
+          <span><i class="rs-dot" style="background:#4dabf7"></i>高密度 · 恩戈罗恩戈罗火山口（五大兽）</span>
+        </div>
+      </div>
+
+      <div id="safari-map"></div>
+      <p class="map-hint">地图：北部游猎典型动线（阿鲁沙 → 塞伦盖蒂 → 恩戈罗 → 回阿鲁沙/JRO）。7 月建议游猎重点放在塞伦盖蒂<strong>北部</strong>（角马迁徙、马拉河一带）。</p>
+
+      <h3 style="font-size:14px;margin-bottom:8px">三种路线方案 · 一眼对比</h3>
+      <div class="scheme-compare">
+        <div class="scheme-card">
+          <h4>A 精简</h4>
+          <p class="sc-route">恩戈罗 + 塞伦盖蒂 · 最短北线</p>
+          <div class="sc-meta"><span>+3 工作日</span><span>3 游猎日</span><span>8/5 回国</span><span>¥1.4–2.5 万</span></div>
+        </div>
+        <div class="scheme-card rec">
+          <h4>B 推荐 ★</h4>
+          <p class="sc-route">塞伦盖蒂 2 日 + 恩戈罗 1 日 · 迁徙与五大兽兼顾</p>
+          <div class="sc-meta"><span>+4 工作日</span><span>4 游猎日</span><span>8/6 回国</span><span>¥2.3–3.2 万</span></div>
+        </div>
+        <div class="scheme-card">
+          <h4>C 经典北线</h4>
+          <p class="sc-route">塔兰吉雷 + 恩戈罗 + 塞伦盖蒂 · 公园最全</p>
+          <div class="sc-meta"><span>+6 工作日</span><span>6 游猎日</span><span>8/8 回国</span><span>¥3.0–5.4 万</span></div>
+        </div>
+      </div>
+
+      <h3 style="font-size:14px;margin:14px 0 8px">体验亮点</h3>
+      <div class="highlight-grid">
+        <div class="hl-card"><div class="hl-icon">🦓</div><b>7 月迁徙旺季</b><p>角马群北移至马拉河附近，捕食者活跃；「天国之渡」有可能（视水位，无保证）。</p></div>
+        <div class="hl-card"><div class="hl-icon">🌋</div><b>恩戈罗火山口</b><p>600m 高围墙内的完整生态系统，单日可见狮子、犀牛、象群等「五大兽」概率极高。</p></div>
+        <div class="hl-card"><div class="hl-icon">🚙</div><b>游猎方式</b><p>敞篷 4×4 越野 + 司机兼向导；早晚黄金时段出车，中午回营地休息，节奏与登山完全不同。</p></div>
+      </div>
+
+      <h3 style="font-size:14px;margin:14px 0 8px">能否衔接 · 五维快判</h3>
+      <p class="muted" style="margin-bottom:8px;font-size:12px">结合你登山后的身体状态、年假与预算，用下面五项快速判断要不要延展（分数越高越适合衔接）。</p>
+      <div class="connect-check">
+        <div class="conn-item"><div class="conn-score high">9.5</div><div><b>季节匹配</b><span>7 月旱季 = 全年最佳游猎窗，与登山旺季重合，难得一次搞定。</span></div></div>
+        <div class="conn-item"><div class="conn-score mid">6.5</div><div><b>体力恢复</b><span>D6 冲顶 + D7 长下坡后膝盖与睡眠负债明显；<strong>必须 8/1 休整 1 天</strong>再上车。</span></div></div>
+        <div class="conn-item"><div class="conn-score high">8.5</div><div><b>物流便利</b><span>阿鲁沙是北部游猎总枢纽，无需换城；可驱车或飞北部小机场（7 月建议飞北部）。</span></div></div>
+        <div class="conn-item"><div class="conn-score mid">6.0</div><div><b>请假成本</b><span>方案 B 额外 +4 工作日；登山已占约 5 个工作日，合计约 9–10 天假。</span></div></div>
+        <div class="conn-item"><div class="conn-score mid">7.0</div><div><b>预订与改签</b><span>7 月营地紧、返程机票需改签；需提前告知徒步帮不乘 8/1 送机，当地社单独签约。</span></div></div>
+        <div class="conn-item"><div class="conn-score high">8.0</div><div><b>体验互补</b><span>登山看山、游猎看兽，景观与节奏完全不同；坦桑一次玩透「山+草原」性价比极高。</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>衔接塞伦盖蒂评估</h3>
+      <p class="muted" style="margin-bottom:12px">登山团 D7（7/31）傍晚回阿鲁沙庆功后，可在 D8 不回国，衔接北部游猎。<b>7 月为旱季旺季 + 角马迁徙北移</b>，塞伦盖蒂北部（马拉河一带）观赏价值全年最高，但营地与机票需提前预订。</p>
+
+      <div class="eval-card" style="border-color:rgba(45,212,168,.35)">
+        <div class="eval-head"><span class="eval-title">综合可行性</span><span class="eval-score">78<small>/100</small></span></div>
+        <div class="eval-bars"><span>季节匹配 9.5</span><span>体力恢复 6.5</span><span>物流便利 8.5</span><span>请假成本 6.0</span></div>
+        <p class="eval-verdict"><b>季节上非常值得</b>；冲顶后须在阿鲁沙休整至少 1 天再上车。游猎需单独向当地旅行社预订，不含在徒步帮 ¥19,800 团费内。</p>
+      </div>
+
+      <h3 style="margin-top:16px;margin-bottom:10px">三种延展方案对比</h3>
+      <table class="prep-table">
+        <thead><tr><th>方案</th><th>游猎天数</th><th>额外假期</th><th>回国日</th><th>游猎费用/人</th></tr></thead>
+        <tbody>
+          <tr><td class="prep-item" data-label="方案"><b>A 精简</b><br>恩戈罗 + 塞伦盖蒂</td><td data-label="游猎">3 游猎日<br>+1 休整日</td><td class="prep-date" data-label="额外假期"><b>+3 工作日</b><br>共约 8–9 天假</td><td class="prep-date rec" data-label="回国">8/5 周三</td><td class="prep-dur" data-label="费用">$2,000–3,500<br>约 ¥1.4–2.5 万</td></tr>
+          <tr class="prep-urgent"><td class="prep-item" data-label="方案"><b>B 推荐</b><br>塞伦盖蒂 2 日 + 恩戈罗</td><td data-label="游猎">4 游猎日<br>+1 休整日</td><td class="prep-date" data-label="额外假期"><b>+4 工作日</b><br>共约 9–10 天假</td><td class="prep-date rec" data-label="回国">8/6 周四</td><td class="prep-dur" data-label="费用">$3,200–4,500<br>约 ¥2.3–3.2 万</td></tr>
+          <tr><td class="prep-item" data-label="方案"><b>C 经典北线</b><br>塔兰吉雷 + 恩戈罗 + 塞伦盖蒂</td><td data-label="游猎">6 游猎日<br>+1 休整日</td><td class="prep-date" data-label="额外假期"><b>+6 工作日</b><br>共约 11–12 天假</td><td class="prep-date rec" data-label="回国">8/8 周六</td><td class="prep-dur" data-label="费用">$4,200–7,500<br>约 ¥3.0–5.4 万</td></tr>
+        </tbody>
+      </table>
+      <p class="muted" style="margin-top:8px;font-size:12px">「共请假」= 仅登山约 5 个工作日（7/27–7/31）+ 离境/返程各约 0.5–1 天 + 上表「额外假期」。D1/D8 落在周末，不计入工作日。</p>
+
+      <h3 style="margin-top:18px;margin-bottom:10px">推荐方案 B · 日程示意</h3>
+      <table class="cost-table">
+        <tr><td class="cost-label">8/1 周六</td><td class="cost-val"><b>休整日</b>（原 D8 回国日改为阿鲁沙休息）· 洗澡补觉、洗衣整包；不建议当日长途驱车</td></tr>
+        <tr><td class="cost-label">8/2 周日</td><td class="cost-val">阿鲁沙 → 恩戈罗高地 / 塞伦盖蒂方向（车程 4–5h）· 下午开始游猎</td></tr>
+        <tr><td class="cost-label">8/3–4</td><td class="cost-val"><b>塞伦盖蒂全日游猎</b>（7 月重点：北部迁徙群、捕食者活跃）· 住帐篷营地或 lodge</td></tr>
+        <tr><td class="cost-label">8/5 周三</td><td class="cost-val"><b>恩戈罗恩戈罗火山口</b> 全日下陷游猎（五大兽概率高）→ 傍晚回阿鲁沙</td></tr>
+        <tr><td class="cost-label">8/6 周四</td><td class="cost-val">JRO 回国（建议下午/傍晚航班）</td></tr>
+      </table>
+
+      <h3 style="margin-top:18px;margin-bottom:10px">费用明细（方案 B · 2 人拼车参考）</h3>
+      <table class="cost-table">
+        <tr><td class="cost-label">游猎团费</td><td class="cost-val">中档 lodge/帐篷 · 含 4×4 越野车、司机向导、公园门票、食宿<br><b>约 $3,200–4,500/人</b>（7 月旺季；2 人拼车低于 4 人）</td></tr>
+        <tr><td class="cost-label">游猎小费</td><td class="cost-val">司机+向导约 <b>$15–30/人/天</b> × 4 天 ≈ $60–120/人</td></tr>
+        <tr><td class="cost-label">阿鲁沙加晚</td><td class="cost-val">休整日多住 1 晚酒店 · 约 <b>$80–150/间</b>（不含在原团 D1/D7 酒店内）</td></tr>
+        <tr><td class="cost-label">可选升级</td><td class="cost-val">阿鲁沙↔塞伦盖蒂小飞机 +$300–400/人（省 8h 车程）；热气球 +$550–600/人</td></tr>
+        <tr><td class="cost-label">延展合计</td><td class="cost-val"><b>约 ¥2.5–3.5 万/人</b>（含小费与休整住宿，不含国际机票改签）</td></tr>
+        <tr><td class="cost-label">全程总预算</td><td class="cost-val">登山 ¥19,800 + 小费/签证等 + 机票 ¥0.8–1.5 万 + 游猎延展 ≈ <b>¥5.5–7 万/人</b></td></tr>
+      </table>
+
+      <h3 style="margin-top:18px;margin-bottom:10px">可行性要点</h3>
+      <ul class="plain">
+        <li><b>季节</b>：7 月属迁徙旺季，角马群北移至马拉河附近，「天国之渡」有可能（视当年水位，无保证）</li>
+        <li><b>体力</b>：D6 冲顶 + D7 长下坡后膝盖与睡眠负债明显；<b>至少 8/1 休整 1 天</b>，跳过者游猎第 2 天易崩溃</li>
+        <li><b>物流</b>：阿鲁沙距塞伦盖蒂车程 4–5h；可飞 Seronera/Kogatende 小机场（7 月北部观赏建议飞北部机场）</li>
+        <li><b>与徒步帮团</b>：D8 原含早餐 + 送机；延展需提前告知领队<b>不乘 8/1 送机</b>，自行安排游猎接驳</li>
+        <li><b>预订</b>：7 月营地紧张，建议 7 月 1 日前向 Arusha 当地社确认；可与登山尾款分开签合同</li>
+        <li><b>机票</b>：去程不变；返程改签到 8/5–8/6，旺季改签费需预留</li>
+      </ul>
+
+      <div class="prep-milestone">
+        <b>决策建议</b>：时间紧、年假少 → 不延展（8/1 回国）。有 4 天额外假且想看迁徙 → <b>方案 B</b>。年假充裕、想一次玩透北线 → 方案 C，并可再接桑给巴尔 3 日海岛（再 +3–4 天）。
+      </div>
+
+      <p class="review-src" style="margin-top:12px">检索参考（2026-06-28）：<a href="https://safarikilimanjaro.com/safari-after-kilimanjaro/" target="_blank" rel="noopener">Safari after Kilimanjaro</a> · <a href="https://www.safari-tz.com/7-day-safari-from-arusha" target="_blank" rel="noopener">7-Day Safari from Arusha</a> · <a href="https://www.wildernesstravel.com/trip/serengeti-safari-extension/" target="_blank" rel="noopener">Wilderness Travel · 4-Day Extension</a> · 报价以当地旅行社实时询价为准</p>
+    </div>
+  </div>
+
+  <div class="source">
+    来源：https://tuicashier.youzan.com/pay/wscgoods_order?alias=27bh5iu1gaac8a4<br>
+    path_id：— · 生成日期：2026-06-28 · 塞伦盖蒂评估：2026-06-28 · 用户评价：2026-07-05（小红书 15 词 · 199 篇验证 · 2236 条评论）
+  </div>
+  <p class="footer">由 travel-agent 生成 · 仅供旅行计划参考</p>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+document.querySelectorAll(".tab").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
+    btn.classList.add("active");
+    const panel = document.getElementById(btn.dataset.tab);
+    panel.classList.add("active");
+    if (btn.dataset.tab === "schedule" && window.routeMap) {
+      setTimeout(() => window.routeMap.invalidateSize(), 120);
+    }
+    if (btn.dataset.tab === "serengeti" && window.safariMap) {
+      setTimeout(() => window.safariMap.invalidateSize(), 120);
+    }
+  });
+});
+
+(function() {
+  const SAFARI = {
+    places: [
+      { id: "arusha", name: "阿鲁沙", sub: "8/1 休整 · 游猎出发", lat: -3.3869, lon: 36.6829, color: "#2dd4a8" },
+      { id: "serengeti", name: "塞伦盖蒂", sub: "8/3–4 · 迁徙核心", lat: -2.35, lon: 34.85, color: "#f0b429" },
+      { id: "ngorongoro", name: "恩戈罗", sub: "8/5 · 火山口", lat: -3.17, lon: 35.55, color: "#4dabf7" },
+      { id: "jro", name: "JRO", sub: "8/6 · 离境", lat: -3.4294, lon: 37.0745, color: "#8b9cb3" }
+    ],
+    segments: [
+      { color: "#2dd4a8", points: [[-3.3869, 36.6829], [-2.35, 34.85]] },
+      { color: "#f0b429", points: [[-2.35, 34.85], [-3.17, 35.55]] },
+      { color: "#4dabf7", points: [[-3.17, 35.55], [-3.3869, 36.6829], [-3.4294, 37.0745]] }
+    ]
+  };
+  const el = document.getElementById("safari-map");
+  if (!el || typeof L === "undefined") return;
+
+  const map = L.map("safari-map", { scrollWheelZoom: false });
+  window.safariMap = map;
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 10,
+    attribution: '&copy; OSM'
+  }).addTo(map);
+
+  const bounds = [];
+  SAFARI.segments.forEach(seg => {
+    L.polyline(seg.points, { color: seg.color, weight: 5, opacity: 0.85, dashArray: seg.color === "#4dabf7" ? "8 6" : null }).addTo(map);
+    seg.points.forEach(p => bounds.push(p));
+  });
+
+  SAFARI.places.forEach(p => {
+    const icon = L.divIcon({
+      className: "",
+      html: '<div style="text-align:center"><div style="background:' + p.color + ';color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.4)">' + p.name + '</div></div>',
+      iconSize: [72, 24],
+      iconAnchor: [36, 12]
+    });
+    L.marker([p.lat, p.lon], { icon }).addTo(map).bindPopup("<b>" + p.name + "</b><br><span style='color:#888;font-size:12px'>" + p.sub + "</span>");
+    bounds.push([p.lat, p.lon]);
+  });
+
+  if (bounds.length) map.fitBounds(L.latLngBounds(bounds), { padding: [28, 28] });
+})();
+
+(function() {
+  const MAP_DATA = {"places": [{"id": "jro", "name": "乞力马扎罗国际机场", "name_en": "Kilimanjaro Intl. Airport (JRO)", "map_label": "JRO", "lat": -3.4294, "lon": 37.0745, "alt_m": 890, "days": [1, 8]}, {"id": "arusha", "name": "阿鲁沙", "name_en": "Arusha", "map_label": "Arusha", "lat": -3.3869, "lon": 36.6829, "alt_m": 1400, "days": [1, 2, 7, 8]}, {"id": "machame_gate", "name": "马查姆山门", "name_en": "Machame Gate", "map_label": "Machame Gate", "lat": -3.1737, "lon": 37.239, "alt_m": 1800, "camp_note": "起点，穿越热带雨林", "days": [2], "osm": true}, {"id": "machame_camp", "name": "马查姆营地", "name_en": "Machame Camp", "map_label": "Machame Camp", "lat": -3.0834, "lon": 37.2178, "alt_m": 3010, "camp_note": "官方路牌 2835m，营地最高处常按 3010m", "days": [2, 3]}, {"id": "shira", "name": "希拉营地", "name_en": "Shira Camp (Shira 2)", "map_label": "Shira Camp", "lat": -3.0503, "lon": 37.1831, "alt_m": 3845, "camp_note": "高山荒野，可远眺梅鲁火山", "days": [3, 4]}, {"id": "lava_tower", "name": "熔岩塔", "name_en": "Lava Tower", "map_label": "Lava Tower", "lat": -3.0684, "lon": 37.3266, "alt_m": 4630, "camp_note": "最高适应点，午餐适应不过夜", "days": [4], "osm": true}, {"id": "barranco", "name": "巴兰科营地", "name_en": "Barranco Camp", "map_label": "Barranco Camp", "lat": -3.0951, "lon": 37.3296, "alt_m": 3960, "camp_note": "Barranco 墙下，最美营地", "days": [4, 5], "osm": true}, {"id": "karanga", "name": "卡朗加营地", "name_en": "Karanga Valley / Camp", "map_label": "Karanga Camp", "lat": -3.113, "lon": 37.3549, "alt_m": 4035, "camp_note": "冲顶前短途过渡营地", "days": [5], "osm": true}, {"id": "mawenzi", "name": "马文茨峰", "name_en": "Mawenzi Peak", "map_label": "Mawenzi Peak", "lat": -3.0925, "lon": 37.455, "alt_m": 5149, "days": [5], "landmark": true}, {"id": "barafu", "name": "巴拉夫营地", "name_en": "Barafu Camp", "map_label": "Barafu Camp", "lat": -3.1, "lon": 37.3787, "alt_m": 4673, "camp_note": "冲顶大本营，高山极寒荒漠", "days": [5, 6], "osm": true}, {"id": "stella", "name": "斯特拉点", "name_en": "Stella Point", "map_label": "Stella Point", "lat": -3.0782, "lon": 37.3626, "alt_m": 5739, "days": [6], "osm": true}, {"id": "uhuru", "name": "乌呼鲁峰", "name_en": "Uhuru Peak", "map_label": "Uhuru Peak", "lat": -3.0764, "lon": 37.354, "alt_m": 5894, "days": [6], "osm": true}, {"id": "mweka_camp", "name": "姆维卡营地", "name_en": "Mweka Hut", "map_label": "Mweka Hut", "lat": -3.1569, "lon": 37.367, "alt_m": 3100, "camp_note": "冲顶后下撤营地，含氧量恢复", "days": [6, 7], "osm": true}, {"id": "mweka_gate", "name": "姆维卡山门", "name_en": "Mweka Gate", "map_label": "Mweka Gate", "lat": -3.2197, "lon": 37.3412, "alt_m": 1640, "camp_note": "终点，领取登顶证书", "days": [7], "osm": true}, {"id": "nairobi", "name": "内罗毕（参考）", "name_en": "Nairobi", "map_label": "Nairobi", "lat": -1.2864, "lon": 36.8172, "alt_m": 1795, "days": [], "reference": true}], "dayPlaces": {"1": ["jro", "arusha"], "2": ["arusha", "machame_gate", "machame_camp"], "3": ["machame_camp", "shira"], "4": ["shira", "lava_tower", "barranco"], "5": ["barranco", "karanga", "barafu", "mawenzi"], "6": ["barafu", "stella", "uhuru", "mweka_camp"], "7": ["mweka_camp", "mweka_gate", "arusha"], "8": ["arusha", "jro"]}, "daySegments": [{"day": "1", "color": "#4dabf7", "points": [[-3.4294, 37.0745], [-3.3869, 36.6829]]}, {"day": "2", "color": "#51cf66", "points": [[-3.3869, 36.6829], [-3.1737, 37.239], [-3.0834, 37.2178]]}, {"day": "3", "color": "#9775fa", "points": [[-3.0834, 37.2178], [-3.0503, 37.1831]]}, {"day": "4", "color": "#fcc419", "points": [[-3.0503, 37.1831], [-3.0684, 37.3266], [-3.0951, 37.3296]]}, {"day": "5", "color": "#ff922b", "points": [[-3.0951, 37.3296], [-3.113, 37.3549], [-3.1, 37.3787]]}, {"day": "6", "color": "#f06595", "points": [[-3.1, 37.3787], [-3.0782, 37.3626], [-3.0764, 37.354], [-3.1569, 37.367]]}, {"day": "7", "color": "#22b8cf", "points": [[-3.1569, 37.367], [-3.2197, 37.3412], [-3.3869, 36.6829]]}, {"day": "8", "color": "#868e96", "points": [[-3.3869, 36.6829], [-3.4294, 37.0745]]}], "dayColors": {"1": "#4dabf7", "2": "#51cf66", "3": "#9775fa", "4": "#fcc419", "5": "#ff922b", "6": "#f06595", "7": "#22b8cf", "8": "#868e96"}, "placeDays": {"jro": [1, 8], "arusha": [1, 2, 7, 8], "machame_gate": [2], "machame_camp": [2, 3], "shira": [3, 4], "lava_tower": [4], "barranco": [4, 5], "karanga": [5], "barafu": [5, 6], "mawenzi": [5], "stella": [6], "uhuru": [6], "mweka_camp": [6, 7], "mweka_gate": [7]}, "markerDay": {"jro": 1, "arusha": 1, "machame_gate": 2, "machame_camp": 2, "shira": 3, "lava_tower": 4, "barranco": 4, "karanga": 5, "barafu": 5, "stella": 6, "uhuru": 6, "mweka_camp": 6, "mweka_gate": 7}};
+  const DAY_DATES = {1:"7/25",2:"7/26",3:"7/27",4:"7/28",5:"7/29",6:"7/30",7:"7/31",8:"8/1"};
+  if (!MAP_DATA.places || !MAP_DATA.places.length) return;
+
+  const map = L.map("route-map", { scrollWheelZoom: true });
+  window.routeMap = map;
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 14,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
+  }).addTo(map);
+
+  const dayPolylines = {};
+  const allBounds = [];
+
+  (MAP_DATA.daySegments || []).forEach(seg => {
+    const line = L.polyline(seg.points, {
+      color: seg.color,
+      weight: 5,
+      opacity: 0.88,
+      lineCap: "round",
+      lineJoin: "round"
+    }).addTo(map);
+    dayPolylines[seg.day] = line;
+    seg.points.forEach(p => allBounds.push(p));
+  });
+
+  function placeLabel(p) {
+    return p.map_label || p.name_en || p.name || "";
+  }
+
+  function markerColor(id) {
+    const days = MAP_DATA.placeDays[id] || [];
+    const d = MAP_DATA.markerDay && MAP_DATA.markerDay[id];
+    return MAP_DATA.dayColors[String(d || days[0])] || "#2dd4a8";
+  }
+
+  function makeMarker(place, color, state) {
+    const alt = place.alt_m ? place.alt_m + "m" : "";
+    const name = placeLabel(place);
+    const dim = state === "dim" ? " dim" : (state === "active" ? " active" : "");
+    const html = '<div class="km-marker-wrap' + dim + '">'
+      + '<div class="km-pin-alt" style="background:' + color + '">' + alt + '</div>'
+      + '<div class="km-place-label">' + name + '</div></div>';
+    const w = Math.max(72, name.length * 6 + 16);
+    return L.divIcon({
+      className: "",
+      html: html,
+      iconSize: [w, 36],
+      iconAnchor: [w / 2, 18]
+    });
+  }
+
+  const refIcon = L.divIcon({
+    className: "",
+    html: '<div class="km-pin-ref"></div>',
+    iconSize: [10, 10],
+    iconAnchor: [5, 5]
+  });
+
+  const allMarkers = {};
+  MAP_DATA.places.forEach(p => {
+    if (p.reference) {
+      const m = L.marker([p.lat, p.lon], { icon: refIcon }).addTo(map);
+      m.bindPopup("<b>" + placeLabel(p) + "</b>（参考）");
+      allMarkers[p.id] = m;
+      return;
+    }
+    const color = markerColor(p.id);
+    const m = L.marker([p.lat, p.lon], { icon: makeMarker(p, color, "normal") }).addTo(map);
+    const days = MAP_DATA.placeDays[p.id] || [];
+    const alt = p.alt_m ? "<br>海拔 " + p.alt_m + "m" : "";
+    const note = p.camp_note ? "<br><span style='color:#888;font-size:12px'>" + p.camp_note + "</span>" : "";
+    const zh = p.name ? "<span style='color:#666'>" + p.name + "</span><br>" : "";
+    const dayTag = days.length
+      ? "<br><span style='color:#666'>D" + days.join(" · D") + "</span>" : "";
+    m.bindPopup("<b>" + placeLabel(p) + "</b>" + zh + alt + note + dayTag);
+    allMarkers[p.id] = m;
+  });
+
+  if (allBounds.length > 1) {
+    map.fitBounds(L.latLngBounds(allBounds), { padding: [32, 32] });
+  } else {
+    map.setView([-3.07, 37.25], 10);
+  }
+
+  let activeDay = "all";
+
+  function setUiActive(day) {
+    document.querySelectorAll(".map-day-btn").forEach(b => {
+      b.classList.toggle("active", b.dataset.day === day);
+    });
+    document.querySelectorAll(".legend-item").forEach(el => {
+      el.classList.toggle("active", el.dataset.day === day);
+    });
+    document.querySelectorAll(".day-card").forEach(c => {
+      c.classList.toggle("active", c.dataset.day === day);
+    });
+  }
+
+  function highlightDay(day) {
+    activeDay = String(day);
+    setUiActive(activeDay);
+
+    document.querySelectorAll(".map-day-btn").forEach(b => {
+      if (b.dataset.day === "all") {
+        b.style.background = activeDay === "all" ? "rgba(255,255,255,.1)" : "";
+      } else if (b.dataset.day === activeDay) {
+        b.style.background = MAP_DATA.dayColors[b.dataset.day] || "";
+      } else {
+        b.style.background = "";
+      }
+    });
+
+    Object.entries(dayPolylines).forEach(([d, line]) => {
+      const on = activeDay === "all" || d === activeDay;
+      const color = MAP_DATA.dayColors[d] || "#2dd4a8";
+      line.setStyle({
+        color: color,
+        weight: on ? (activeDay === "all" ? 5 : 7) : 3,
+        opacity: on ? (activeDay === "all" ? 0.88 : 1) : 0.15
+      });
+      if (on && activeDay !== "all") line.bringToFront();
+    });
+
+    const ids = activeDay === "all" ? null : (MAP_DATA.dayPlaces[activeDay] || []);
+    const bounds = [];
+
+    Object.entries(allMarkers).forEach(([id, m]) => {
+      const place = MAP_DATA.places.find(p => p.id === id);
+      if (place && place.reference) return;
+      const color = activeDay === "all"
+        ? markerColor(id)
+        : (MAP_DATA.dayColors[activeDay] || "#f0b429");
+      if (activeDay === "all") {
+        m.setIcon(makeMarker(place, color, "normal"));
+        m.setZIndexOffset(0);
+        bounds.push(m.getLatLng());
+        return;
+      }
+      const on = ids.includes(id);
+      m.setIcon(makeMarker(place, color, on ? "active" : "dim"));
+      m.setZIndexOffset(on ? 1000 : 0);
+      if (on) bounds.push(m.getLatLng());
+    });
+
+    if (activeDay !== "all" && bounds.length) {
+      map.fitBounds(L.latLngBounds(bounds), { padding: [48, 48], maxZoom: 12 });
+    } else if (activeDay === "all" && allBounds.length > 1) {
+      map.fitBounds(L.latLngBounds(allBounds), { padding: [32, 32] });
+    }
+  }
+
+  const btnWrap = document.getElementById("map-day-btns");
+  const allBtn = document.createElement("button");
+  allBtn.type = "button";
+  allBtn.className = "map-day-btn map-day-btn-all active";
+  allBtn.dataset.day = "all";
+  allBtn.textContent = "全部";
+  allBtn.addEventListener("click", () => highlightDay("all"));
+  btnWrap.appendChild(allBtn);
+
+  Object.keys(MAP_DATA.dayColors).sort((a, b) => +a - +b).forEach(d => {
+    const color = MAP_DATA.dayColors[d];
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "map-day-btn";
+    b.dataset.day = d;
+    b.textContent = "D" + d + " " + (DAY_DATES[d] || "");
+    b.style.borderColor = color;
+    b.style.setProperty("--day-color", color);
+    b.addEventListener("click", () => highlightDay(d));
+    btnWrap.appendChild(b);
+  });
+
+  document.querySelectorAll(".legend-item").forEach(el => {
+    el.addEventListener("click", () => highlightDay(el.dataset.day));
+  });
+
+  document.querySelectorAll(".day-card").forEach(card => {
+    card.addEventListener("click", () => highlightDay(card.dataset.day));
+    card.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        highlightDay(card.dataset.day);
+      }
+    });
+  });
+
+  highlightDay("all");
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "travel-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Travel Agent — trip reports & GitHub Pages site (jackielamzeqi/travel)",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:pages": "npm run build",
+    "preview": "npx --yes serve docs -l 3000"
+  }
+}
