@@ -1,9 +1,10 @@
 # travel-agent
 
-旅行评估报告与发布站（GitHub 仓库：`jackielamzeqi/travel`）。
+旅行评估报告与发布站。
 
+- **源码真相**：本目录位于 `obsidian_vault`（不要单独建 git 仓库）
 - Pages：https://jackielamzeqi.github.io/travel/
-- Pages 源：`main` 分支 `/docs`
+- 发布：`git push` vault `main` → Actions 镜像到 `jackielamzeqi/travel` → 该仓 Pages Deploy
 
 ## 目录
 
@@ -17,13 +18,17 @@ travel-agent/
 └── package.json
 ```
 
-## 发布
+## 本地验证
 
 ```bash
 npm run build
-git add docs src data assets
-git commit -m "Update travel site"
-git push
+npm run preview   # 可选
 ```
 
-本目录即唯一本地工程，**不要**再维护 `GitHub/travel` 或 `GitHub/travel.github.io`。
+## 跨端与发布
+
+1. 在任意电脑：`git pull` vault → 改本目录 → `git commit` → `git push` vault
+2. vault 工作流 `Publish Workspaces Pages` 自动镜像到 `jackielamzeqi/travel`
+3. 无需再对 `travel` 仓做日常手动 push
+
+一次性：在 `obsidian_vault` 仓库 Secrets 配置 `PAGES_DEPLOY_TOKEN`（可写 `ops` + `travel`）。
