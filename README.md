@@ -4,7 +4,7 @@
 
 - **源码真相**：本目录位于 `obsidian_vault`（不要单独建 git 仓库）
 - Pages：https://jackielamzeqi.github.io/travel/
-- 发布：`git push` vault `main` → Actions 镜像到 `jackielamzeqi/travel` → 该仓 Pages Deploy
+- 发布：`git push` vault `main` → Actions 镜像到 `jackielamzeqi/travel` → **GitHub Pages 从 `main` / `docs` 分支发布**（不要改成 GitHub Actions 部署；公开仓无 `.github` 工作流）
 
 ## 目录
 
