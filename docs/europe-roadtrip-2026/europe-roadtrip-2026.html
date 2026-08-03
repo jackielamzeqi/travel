@@ -13,7 +13,7 @@
 .section{padding:30px 0}main>.section:first-child{padding-top:0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}.section-head h2{font-size:clamp(25px,3vw,38px);letter-spacing:-.015em;margin:0}.section-head p{color:var(--muted);margin:0;max-width:650px}.card{background:rgba(16,34,30,.9);border:1px solid var(--line);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.05),var(--shadow)}
 .map-toolbar{padding:10px 0 12px;margin:0 0 2px}.day-chips{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin-bottom:0}.day-chips button{border:1px solid var(--line);background:#0d1d19;color:var(--muted);padding:0 11px;height:36px;border-radius:12px;cursor:pointer;font-size:13px;font-weight:650;line-height:1;text-align:center;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;transition:background-color var(--dur-1) var(--ease-out),border-color var(--dur-1) var(--ease-out),color var(--dur-1) var(--ease-out),transform var(--dur-1) var(--ease-out)}.day-chips button[data-day]:not([data-day="all"]){border-color:var(--day);color:var(--day)}.day-chips button:hover{border-color:#4c6c62;color:var(--text)}.day-chips button:active{transform:scale(.97)}.day-chips button:focus-visible{outline:1px solid var(--green);outline-offset:2px}.day-chips button.active{background:var(--green);border-color:var(--green);color:#052019}.day-chips button[data-day]:not([data-day="all"]).active{background:var(--day);border-color:var(--day);color:#07110f}
 .map-layout{display:grid;grid-template-columns:1.55fr .75fr;gap:16px;align-items:start;--map-panel-height:94.5vh}.map-column{min-width:0;display:grid;gap:8px;align-content:start}.map-card{height:var(--map-panel-height);overflow:hidden;position:relative}#map{height:100%;min-height:0;border-radius:18px;background:#0c1a17}.map-legend{position:absolute;z-index:500;left:14px;bottom:14px;background:rgba(7,17,15,.9);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:12px;color:#c9ddd6}.map-legend span{display:inline-flex;align-items:center;margin-right:10px;gap:5px}.dot{width:9px;height:9px;border-radius:50%;display:inline-block}.drive{background:var(--green)}.flight{background:var(--blue)}.summary-panel{padding:20px;display:flex;flex-direction:column;gap:0;height:var(--map-panel-height);min-height:0;overflow:hidden;box-sizing:border-box}.summary-panel>#routeSummary,.summary-panel>#dayInfo{flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden}.summary-title{font-size:20px;font-weight:750;margin:0;flex:0 0 auto}.summary-item{padding:13px 0;border-top:1px solid var(--line);flex:0 0 auto}.summary-item:first-of-type{border-top:0}.summary-item.day-list-item,.summary-item.route-list-item{flex:1;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding-right:4px;scrollbar-width:thin;scrollbar-color:#31584d transparent}.summary-item.day-list-item::-webkit-scrollbar,.summary-item.route-list-item::-webkit-scrollbar{width:6px}.summary-item.day-list-item::-webkit-scrollbar-thumb,.summary-item.route-list-item::-webkit-scrollbar-thumb{background:#31584d;border-radius:99px}.summary-item strong{display:block;font-size:17px}.summary-item span{color:var(--muted);font-size:13px}.route-line{display:grid;gap:1px}.route-node{display:flex;align-items:center;gap:8px;color:#d7e8e2;font-size:13px}.route-node i{width:23px;height:23px;border-radius:50%;background:#17372f;border:1px solid #31584d;display:grid;place-items:center;font-style:normal;font-size:11px;color:var(--green);flex:0 0 auto}.route-day-node{width:100%;min-height:30px;padding:4px 6px;margin:0;border:1px solid transparent;border-radius:8px;background:transparent;color:inherit;text-align:left;cursor:pointer;box-sizing:border-box;align-items:center;transition:background-color var(--dur-1) var(--ease-out),border-color var(--dur-1) var(--ease-out),transform var(--dur-1) var(--ease-out)}.route-day-node:hover,.route-day-node:focus-visible{background:rgba(21,49,42,.85);border-color:rgba(49,88,77,.65);outline:none}.route-day-node:active{transform:scale(.985)}.route-day-node i{width:auto;min-width:30px;height:22px;padding:0 6px;border-radius:7px;background:rgba(7,17,15,.55);border:1px solid var(--day);color:var(--day);font-size:10px;font-weight:800;letter-spacing:-.02em}.route-day-node span{display:flex;align-items:center;justify-content:space-between;gap:8px;flex:1;min-width:0}.route-day-node b{display:block;font-size:13px;font-weight:650;color:#e5f3ee;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.route-day-node em{flex:0 0 auto;font-style:normal;color:var(--muted);font-size:11px;white-space:nowrap}#routeSummary .summary-item{padding:10px 0}#routeSummary .summary-item strong{font-size:15px}#routeSummary .route-list-item{padding-top:8px}
-.experience-list{display:grid;gap:4px;margin-top:0}.experience-place{display:grid;grid-template-columns:1.15em 1fr auto;gap:8px;width:100%;padding:7px 0;border:1px solid transparent;border-radius:0;background:transparent;color:inherit;text-align:left;cursor:pointer}.experience-place:hover,.experience-place:focus-visible,.experience-place.active{background:transparent;border-color:transparent;outline:none}.experience-place i{width:auto;min-width:0;height:auto;border-radius:0;background:transparent;border:0;display:block;padding:0;font-style:normal;font-size:12px;font-weight:700;line-height:1.35;color:var(--muted);font-variant-numeric:tabular-nums}.experience-place i.stay-icon{background:transparent;border:0;font-size:14px;line-height:1.2;font-weight:400}.experience-place b{display:block;font-size:13px;color:#e5f3ee}.experience-place em{display:block;font-style:normal;font-size:12px;color:var(--green);margin-top:2px}.experience-place .place-detail{display:block;color:var(--muted);font-size:11px;line-height:1.45;margin-top:3px}.drive-intensity{display:grid;gap:12px;margin-top:10px}.drive-stat-head{display:flex;justify-content:space-between;gap:8px;align-items:baseline;font-size:12px}.drive-stat-head b{color:#dcece6;font-variant-numeric:tabular-nums}.drive-stat-head span{color:var(--muted)}.drive-bar{height:9px;background:#0a1815;border:1px solid #213c35;border-radius:99px;overflow:hidden;margin-top:5px}.drive-bar i{display:block;height:100%;min-width:0;border-radius:inherit;background:linear-gradient(90deg,var(--green),#87e7c4);transition:width 600ms var(--ease-out)}.drive-bar.time i{background:linear-gradient(90deg,var(--blue),#9cc8ff)}.drive-delta{font-size:11px;color:var(--muted);padding:7px 9px;border-radius:9px;background:#0b1916}.place-popup{width:270px}.place-popup-image{height:128px;margin:-12px -14px 10px;background:linear-gradient(135deg,#18352e,#10221e);overflow:hidden}.place-popup-image img{width:100%;height:100%;object-fit:cover;display:block}.place-popup h4{font-size:15px;margin:0 0 5px}.place-popup .place-experience{color:var(--green);font-size:12px;font-weight:700;margin-bottom:5px}.place-popup p{color:#b9d0c8;font-size:12px;line-height:1.5;margin:0}.place-popup a{display:inline-block;margin-top:8px;color:#9bc7ff;font-size:11px;text-decoration:none}.place-popup a:hover{text-decoration:underline}.place-image-credit{font-size:9px;color:#78968b;margin-top:3px}
+.experience-list{display:grid;gap:4px;margin-top:0}.experience-place{display:grid;grid-template-columns:1.15em 1fr auto;gap:8px;align-items:center;width:100%;padding:7px 8px;margin:0 -8px;border:1px solid transparent;border-radius:10px;background:transparent;color:inherit;text-align:left;cursor:pointer}.experience-place:hover,.experience-place:focus-visible{background:transparent;border-color:transparent;outline:none}.experience-place.active{background:rgba(85,214,167,.12);border-color:transparent;border-radius:10px 0 0 10px}.experience-place i{width:auto;min-width:0;height:auto;border-radius:0;background:transparent;border:0;display:block;padding:0;font-style:normal;font-size:12px;font-weight:700;line-height:1.35;color:var(--muted);font-variant-numeric:tabular-nums}.experience-place i.stay-icon{background:transparent;border:0;font-size:14px;line-height:1.2;font-weight:400}.experience-place b{display:block;font-size:13px;color:#e5f3ee}.experience-place em{display:block;font-style:normal;font-size:12px;color:var(--green);margin-top:2px}.experience-place .place-detail{display:block;color:var(--muted);font-size:11px;line-height:1.45;margin-top:3px}.drive-intensity{display:grid;gap:12px;margin-top:10px}.drive-stat-head{display:flex;justify-content:space-between;gap:8px;align-items:baseline;font-size:12px}.drive-stat-head b{color:#dcece6;font-variant-numeric:tabular-nums}.drive-stat-head span{color:var(--muted)}.drive-bar{height:9px;background:#0a1815;border:1px solid #213c35;border-radius:99px;overflow:hidden;margin-top:5px}.drive-bar i{display:block;height:100%;min-width:0;border-radius:inherit;background:linear-gradient(90deg,var(--green),#87e7c4);transition:width 600ms var(--ease-out)}.drive-bar.time i{background:linear-gradient(90deg,var(--blue),#9cc8ff)}.drive-delta{font-size:11px;color:var(--muted);padding:7px 9px;border-radius:9px;background:#0b1916}.place-popup{width:270px}.place-popup-image{height:128px;margin:-12px -14px 10px;background:linear-gradient(135deg,#18352e,#10221e);overflow:hidden}.place-popup-image img{width:100%;height:100%;object-fit:cover;display:block}.place-popup h4{font-size:15px;margin:0 0 5px}.place-popup .place-experience{color:var(--green);font-size:12px;font-weight:700;margin-bottom:5px}.place-popup p{color:#b9d0c8;font-size:12px;line-height:1.5;margin:0}.place-popup a{display:inline-block;margin-top:8px;color:#9bc7ff;font-size:11px;text-decoration:none}.place-popup a:hover{text-decoration:underline}.place-image-credit{font-size:9px;color:#78968b;margin-top:3px}
 .route-decisions{display:grid;gap:9px;padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.route-decisions[hidden]{display:none!important}.route-decisions-title{font-size:13px;font-weight:800;color:#ffd19a}.route-option{padding:11px;border:1px solid var(--line);border-radius:12px;background:#0b1916;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}.route-option-head{display:flex;justify-content:space-between;gap:8px;align-items:center}.route-option-head b{font-size:13px}.route-verdict{font-size:10px;padding:3px 6px;border-radius:99px;white-space:nowrap}.route-verdict.conditional{background:rgba(255,191,105,.12);color:#ffd19a}.route-verdict.avoid{background:rgba(255,123,120,.12);color:#ffaaa7}.route-path{font-size:11px;color:#c8dcd5;margin:6px 0}.route-option ul{padding-left:17px;margin:6px 0 0;color:var(--muted);font-size:11px}.route-option a{color:#9bc7ff;text-decoration:none}.route-decision-note{font-size:11px;color:#b9d0c8;padding:9px;border-radius:10px;background:rgba(255,191,105,.08)}
 .btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:10px 13px;border-radius:10px;cursor:pointer;transition:border-color var(--dur-1) var(--ease-out),background-color var(--dur-1) var(--ease-out),transform var(--dur-1) var(--ease-out)}.btn:hover{border-color:var(--green)}.btn:active{transform:scale(.98)}.btn:focus-visible{outline:1px solid var(--green);outline-offset:2px}
 .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.content-card{padding:22px}.content-card h3{font-size:22px;margin:0 0 8px}.content-card p{color:#bfd3cc;margin:8px 0}
@@ -51,6 +51,12 @@ footer{padding:36px 0 54px;color:var(--muted);font-size:13px}.footer-row{border-
 .place-popup .popup-carousel .car-count{position:absolute;right:8px;bottom:8px;background:rgba(7,17,15,.72);color:#eef8f4;font-size:11px;padding:2px 8px;border-radius:99px;font-variant-numeric:tabular-nums}
 .stay-icon.airbnb{color:#ff5a5f}
 .custom-marker.stay svg,.day-marker.stay svg{width:14px;height:14px;vertical-align:middle}
+.leaflet-popup-content-wrapper{border-radius:14px;overflow:hidden}
+.place-popup .place-popup-image{border-radius:13px 13px 0 0;overflow:hidden}
+.day-nav{display:flex;gap:8px;padding-top:12px}
+.day-nav-btn{flex:1;font-size:12px;padding:8px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.day-nav-btn:disabled{opacity:.4;cursor:default}
+.day-nav-btn:disabled:hover{border-color:var(--line)}
 </style>
 </head>
 <body>
@@ -89,7 +95,7 @@ footer{padding:36px 0 54px;color:var(--muted);font-size:13px}.footer-row{border-
         <div id="dayInfo" style="display:none">
           <h3 class="summary-title" id="dayInfoTitle"></h3>
           <div class="summary-item"><div class="drive-intensity" id="dayDriveIntensity"></div></div>
-          <div class="summary-item day-list-item"><div class="experience-list" id="dayInfoList"></div></div>
+          <div class="summary-item day-list-item"><div class="experience-list" id="dayInfoList"></div><div class="day-nav" id="dayNav"></div></div>
         </div>
       </aside>
     </div>
@@ -183,10 +189,12 @@ const northEastRoute=[
  {name:'🇮🇸 Hverir 纳马菲亚德地热区',lat:65.6408,lng:-16.8083,note:'地热景观 · 紧邻米湖温泉'},
  {name:'🇮🇸 米湖温泉 Mývatn Nature Baths',lat:65.6245,lng:-16.8467,note:'比蓝湖便宜人少 · 可买学生票'}
 ];
+const kirkjufell={name:'🇮🇸 Kirkjufell 草帽山',lat:64.9266,lng:-23.3111,note:'斯奈山标志山峰 · 54号公路旁短停'};
 const stays={
  reykjavik:{stay:true,hotel:'Downtown Reykjavík Apartments',area:'🇮🇸 雷克雅未克 Reykjavík',name:'🇮🇸 雷克雅未克 Reykjavík',lat:64.1411,lng:-21.9147,note:'Rauðarárstígur 31',address:'Rauðarárstígur 31',experience:'市中心公寓住宿',intro:'雷克雅未克市中心公寓，步行可达老城与港口氛围区。',tip:'9/27 首晚入住，次日黄金圈出发。'},
  hvolsvollur:{stay:true,hotel:'Hugleikshus · Airbnb 整套民居',area:'🇮🇸 霍尔斯沃德吕尔 Hvolsvöllur',name:'🇮🇸 Hvolsvöllur',lat:63.7566,lng:-20.2126,note:'Rangárþing eystra, Hvolsvöllur',address:'Rangárþing eystra, Hvolsvöllur（详细地址见 Airbnb 预订页）',experience:'Airbnb 整套民居 · 4 间卧室',intro:'Airbnb 整套民居：4 间卧室、4 张床、1.5 个卫生间，可住 8 人，毗邻黄金圈与南岸热门景点。',tip:'9/28—29 连住两晚，行李可留房。',airbnb:'https://www.airbnb.cn/rooms/1662426944708965472?check_in=2026-09-28&check_out=2026-09-30&guests=1&adults=8&s=67&unique_share_id=fcda888f-7167-44af-87cc-07487080174f&source_impression_id=p3_1785642370_P3jocu0yHvSa4nwR&modal=PHOTO_TOUR_SCROLLABLE',airbnbImages:['../assets/airbnb/bedroom-1.jpg','../assets/airbnb/bedroom-2.jpg','../assets/airbnb/bedroom-3.jpg','../assets/airbnb/bedroom-4.jpg']},
- vagnsstadir:{stay:true,hotel:'Vagnsstaðir Guesthouse',area:'🇮🇸 瓦特纳冰川区域',name:'🇮🇸 Vagnsstaðir',lat:64.18306,lng:-15.80785,note:'瓦特纳冰川区域住宿',address:'Vagnsstaðir, Vatnajökull',experience:'冰川区域乡野住宿',intro:'瓦特纳冰川区域乡野住宿，夜宿节奏安静。',tip:'次日 09:00 前赶到 Skaftafell 集合。'},
+ skaftafellHotel:{stay:true,candidate:true,hotel:'Hótel Skaftafell',area:'🇮🇸 斯卡夫塔山 Freysnes',name:'🇮🇸 Hótel Skaftafell',lat:64.0086,lng:-16.9872,note:'Freysnes, 785 Öræfi · 9/30 首选',address:'Freysnes, 785 Öræfi',experience:'9/30 首选酒店',intro:'紧邻 Skaftafell 的冰川景区酒店，次日 09:00 集合最从容。',tip:'9/30 首选；满房则按顺序住 Vagnsstaðir Guesthouse。',official:'https://www.hotelskaftafell.is/'},
+ vagnsstadir:{stay:true,hotel:'Vagnsstaðir Guesthouse',area:'🇮🇸 瓦特纳冰川区域',name:'🇮🇸 Vagnsstaðir',lat:64.18306,lng:-15.80785,note:'瓦特纳冰川区域住宿 · 9/30 第二选择',address:'Vagnsstaðir, Vatnajökull',experience:'冰川区域乡野住宿',intro:'瓦特纳冰川区域乡野住宿，夜宿节奏安静。',tip:'9/30 第二选择；次日 09:00 前赶到 Skaftafell 集合。'},
  egilsstadir:{stay:true,hotel:'Lyngás Guesthouse / Hótel Valaskjálf',area:'🇮🇸 埃伊尔斯塔济 Egilsstaðir',name:'🇮🇸 埃伊尔斯塔济 Egilsstaðir',lat:65.2629,lng:-14.3943,note:'东部过夜 · 暂定两家',address:'Lyngás 5-7 / Skógarlönd 6（暂定）',experience:'东部枢纽住宿',intro:'东冰岛枢纽过夜，补给与次日北上门户。',tip:'暂定两家，待最终确认。'},
  myvatn:{stay:true,hotel:'Fljótsbakki Hotel',area:'🇮🇸 戈达瀑布附近 Goðafoss',name:'🇮🇸 Fljótsbakki',lat:65.7159,lng:-17.5240,note:'Fljótsbakka, 641 · 9/24 23:59 前免费退',address:'Fljótsbakka, 641',experience:'北部枢纽农场酒店',intro:'靠近众神瀑布的北部农场酒店，氛围安静。',tip:'9/24 23:59 前可免费取消。'},
  northwest:{stay:true,hotel:'North West Restaurant & Guesthouse',area:'🇮🇸 赫伐姆斯唐吉附近 Hvammstangi',name:'🇮🇸 North West',lat:65.3532,lng:-20.6077,note:'Víðigerði, 531 · 9/30 17:00 前免费退',address:'Víðigerði, 531',experience:'1号公路西北岸住宿',intro:'1号公路西北岸住宿，衔接北部西行与斯奈山。',tip:'9/30 17:00 前可免费取消。'},
@@ -199,14 +207,14 @@ const stays={
 const days=[
  {date:'9/25',flag:'🇮🇹',city:'米兰',title:'米兰抵达 · 休整',driveKm:0,driveHours:0,activityHours:12,transport:'EY81：06:45 抵达 MXP。当天不飞离，在米兰过夜。',spot:'倒时差与休整；次日转往利纳特（LIN）机场。',points:[{...italyPoints[1],type:'flight',note:'06:45 抵达',experience:'入境门户',intro:'意大利北部主要国际门户；长途航班多经马尔彭萨 T1。',tip:'阿提哈德 EY81，约 06:45 抵达马尔彭萨 T1；当天不飞离。'},{...italyPoints[0],type:'flight'},{...stays.milan,type:'flight'}]},
  {date:'9/26',flag:'🇳🇱',city:'阿姆斯特丹',title:'米兰 LIN → 阿姆斯特丹',driveKm:0,driveHours:0,activityHours:10,transport:'KL1618：LIN 16:50 → AMS 18:40（CZ6A5Z）。',spot:'下午转利纳特起飞；史基浦过夜，中转约22小时20分。',points:[{...italyPoints[2],type:'flight',note:'16:50 起飞',experience:'近城短途机场',intro:'利纳特更靠近市区，适合欧洲短途衔接，与马尔彭萨不是同一机场。',tip:'KL1618：LIN 16:50 → AMS 18:40；订票编号 CZ6A5Z，MAIN 起飞。'},{...amsterdamPoints[0],type:'flight',note:'18:40 抵达',experience:'欧洲枢纽机场',intro:'史基浦是欧洲主要中转枢纽，过夜衔接可兼顾休息与次日准点。',tip:'18:40 抵达后过夜；可进市区或住机场酒店，中转约22小时20分。'},{...stays.amsterdam,type:'flight'}]},
- {date:'9/27',flag:'🇮🇸',city:'雷克雅未克',title:'AMS → KEF取车 → 雷克雅未克',driveKm:50,driveHours:.75,activityHours:6,transport:'KL2530/HV6885：AMS 17:00 → KEF 18:15（CZ6A5Z）；取车后开入雷克雅未克约50 km / 45分。',spot:'机场提取 Toyota Land Cruiser 150；验车后进城，住 Downtown Reykjavík Apartments。',points:[{...amsterdamPoints[0],type:'flight',note:'17:00 起飞',experience:'飞往冰岛',intro:'从史基浦傍晚起飞，当天抵达冰岛开启环岛自驾。',tip:'KL2530 / HV6885：AMS 17:00 → KEF 18:15；DEPARTURE 1 起飞。'},{...baseIceland[0],type:'flight',note:'18:15 抵达后直接取车',experience:'取车启程',intro:'凯夫拉维克落地即取4WD，正式进入冰岛环岛节奏。',tip:'提取 Toyota Land Cruiser 150；核对车况、轮胎、油量与保险后经1号公路进城约50 km。'},{...stays.reykjavik,type:'drive'}]},
- {date:'9/28',flag:'🇮🇸',city:'Hvolsvöllur',title:'黄金圈（不含高地）',driveKm:250,driveHours:4.5,activityHours:11,transport:'约250 km / 4.5小时；从雷克雅未克经辛格韦德利走黄金圈，当晚住 Hvolsvöllur。',spot:'辛格韦德利 → Brúarfoss → Geysir → Gullfoss；当天不上高地，住 Hugleikshus（Airbnb 整套民居）。',points:[{...stays.reykjavik,name:'🇮🇸 雷克雅未克出发',type:'drive'},{...baseIceland[2],type:'drive'},{...baseIceland[3],type:'drive'},{...baseIceland[4],type:'drive'},{...baseIceland[5],type:'drive'},{...stays.hvolsvollur,type:'drive'}]},
- {date:'9/29',flag:'🇮🇸',city:'Landmannalaugar',title:'中央高地 Landmannalaugar',driveKm:220,driveHours:5,activityHours:11,transport:'约220 km / 5小时；自 Hvolsvöllur 进出 F208 北线，当晚仍住同一 Airbnb 民宿。',spot:'Þjórsárdalur → Hjálparfoss → Sigöldugljúfur → Landmannalaugar；条件不允许则取消高地段，就近改南岸短线。',points:[{...stays.hvolsvollur,name:'🇮🇸 Hvolsvöllur 出发',type:'drive'},...highlandRoute.map(p=>({...p,type:'drive'})),{...stays.hvolsvollur,type:'drive'}]},
- {date:'9/30',flag:'🇮🇸',city:'Vík / 南岸',title:'冰岛南岸精华',driveKm:320,driveHours:4.5,activityHours:12,transport:'约320 km / 4.5小时；含两段峡谷徒步。',spot:'塞里雅兰瀑布 → 斯科加瀑布 → 黑沙滩 → Loftsalahellir → 羽毛河峡谷 → 穆拉格朱富尔峡谷；住 Vagnsstaðir Guesthouse。',points:[{...stays.hvolsvollur,name:'🇮🇸 Hvolsvöllur 出发',type:'drive'},...southCoastRoute.map(p=>({...p,type:'drive'})),{...stays.vagnsstadir,type:'drive'}]},
+ {date:'9/27',flag:'🇮🇸',city:'雷克雅未克',title:'阿姆斯特丹 → 雷克雅未克',driveKm:50,driveHours:.75,activityHours:6,transport:'KL2530/HV6885：AMS 17:00 → KEF 18:15（CZ6A5Z）；取车后开入雷克雅未克约50 km / 45分。',spot:'机场提取 Toyota Land Cruiser 150；验车后进城，住 Downtown Reykjavík Apartments。',points:[{...amsterdamPoints[0],type:'flight',note:'17:00 起飞',experience:'飞往冰岛',intro:'从史基浦傍晚起飞，当天抵达冰岛开启环岛自驾。',tip:'KL2530 / HV6885：AMS 17:00 → KEF 18:15；DEPARTURE 1 起飞。'},{...baseIceland[0],type:'flight',note:'18:15 抵达后直接取车',experience:'取车启程',intro:'凯夫拉维克落地即取4WD，正式进入冰岛环岛节奏。',tip:'提取 Toyota Land Cruiser 150；核对车况、轮胎、油量与保险后经1号公路进城约50 km。'},{...stays.reykjavik,type:'drive'}]},
+ {date:'9/28',flag:'🇮🇸',city:'Hvolsvöllur',title:'黄金圈',driveKm:250,driveHours:4.5,activityHours:11,transport:'约250 km / 4.5小时；从雷克雅未克经辛格韦德利走黄金圈，当晚住 Hvolsvöllur。',spot:'辛格韦德利 → Brúarfoss → Geysir → Gullfoss；当天不上高地，住 Hugleikshus（Airbnb 整套民居）。',points:[{...stays.reykjavik,name:'🇮🇸 雷克雅未克出发',type:'drive'},{...baseIceland[2],type:'drive'},{...baseIceland[3],type:'drive'},{...baseIceland[4],type:'drive'},{...baseIceland[5],type:'drive'},{...stays.hvolsvollur,type:'drive'}]},
+ {date:'9/29',flag:'🇮🇸',city:'Landmannalaugar',title:'中央高地',driveKm:220,driveHours:5,activityHours:11,transport:'约220 km / 5小时；自 Hvolsvöllur 进出 F208 北线，当晚仍住同一 Airbnb 民宿。',spot:'Þjórsárdalur → Hjálparfoss → Sigöldugljúfur → Landmannalaugar；条件不允许则取消高地段，就近改南岸短线。',points:[{...stays.hvolsvollur,name:'🇮🇸 Hvolsvöllur 出发',type:'drive'},...highlandRoute.map(p=>({...p,type:'drive'})),{...stays.hvolsvollur,type:'drive'}]},
+ {date:'9/30',flag:'🇮🇸',city:'Vík / 南岸',title:'南岸精华',driveKm:320,driveHours:4.5,activityHours:12,transport:'约320 km / 4.5小时；含两段峡谷徒步。',spot:'塞里雅兰瀑布 → 斯科加瀑布 → 黑沙滩 → Loftsalahellir → 羽毛河峡谷 → 穆拉格朱富尔峡谷；住宿首选 Hótel Skaftafell，其次 Vagnsstaðir Guesthouse。',points:[{...stays.hvolsvollur,name:'🇮🇸 Hvolsvöllur 出发',type:'drive'},...southCoastRoute.map(p=>({...p,type:'drive'})),{...stays.skaftafellHotel,type:'drive'},{...stays.vagnsstadir,type:'drive'}]},
  {date:'10/1',flag:'🇮🇸',city:'Egilsstaðir',title:'Skaftafell 冰川徒步',driveKm:250,driveHours:3.5,activityHours:11,transport:'上午 Glacier Explorer 往返约5.5小时；下午东行约250 km / 3.5小时，当晚做环岛决策。',spot:'09:00 在 Skaftafell Booking Center 集合；约8 km、爬升约400 m、中等强度。结束后可短停钻石沙滩，经 Stokksnes 住 Egilsstaðir（暂定 Lyngás Guesthouse / Hótel Valaskjálf）。',points:[{...stays.vagnsstadir,name:'🇮🇸 Vagnsstaðir 出发',type:'drive'},{...baseIceland[8],type:'drive',experience:'冰川徒步核心体验',intro:'走上瓦特纳冰川，近距离看冰原纹理与冰裂缝，是本程强度最高的精华活动。',tip:'09:00 Skaftafell Booking Center 集合；约8 km、爬升约400 m、往返约5.5小时。须跟持证向导。'},{...baseIceland[9],type:'drive'},{...baseIceland[10],type:'drive'},{...stays.egilsstadir,type:'drive'}]},
  {date:'10/2',flag:'🇮🇸',city:'米湖 / Goðafoss',title:'东峡湾 → 米湖温泉',driveKm:320,driveHours:5,activityHours:12,transport:'约320 km / 5小时（含 Seyðisfjörður 往返与 Stuðlagil 支线）；当晚住 Fljótsbakki Hotel。',spot:'Seyðisfjörður → Stuðlagil → Dettifoss → Hverir → 米湖温泉；当晚住 Fljótsbakki Hotel（9/24 23:59 前免费退）。Hengifoss / Litlanesfoss 与 Krafla 为可舍去备选。',mapNotes:[{name:'🇮🇸 Litlanesfoss / Hengifoss',lat:65.0956,lng:-14.8903,note:'可舍去 · 两瀑布同线',experience:'玄武岩与高瀑同线',intro:'东冰岛层状玄武岩与高瀑布同线，景色值得但耗时。',tip:'可舍去：时间紧时跳过，把体力留给 Stuðlagil 与戴提瀑布。'},{name:'🇮🇸 Krafla 克拉夫拉火山',lat:65.7147,lng:-16.7281,note:'可舍去 · 看时间',experience:'火山地热备选',intro:'火山口与地热区交织的北线支线，日照富余时值得加走。',tip:'可舍去：戴提后仍有富余日照再拐入；否则直奔 Hverir 与米湖温泉。'}],points:[{...stays.egilsstadir,name:'🇮🇸 Egilsstaðir 出发',type:'drive'},{name:'🇮🇸 Seyðisfjörður 塞济斯菲厄泽',lat:65.2609,lng:-14.009,type:'drive',note:'白日梦想家取景地',experience:'《白日梦想家》取景镇',intro:'彩色木屋与峡湾尽头小镇，进出山路本身就是风景。',tip:'白天短访后折返西行；往返山路计入当天驾驶里程。'},{...northEastRoute[1],type:'drive',experience:'六棱玄武岩峡谷',intro:'六棱玄武岩柱与蓝色河水并置，东冰岛近年最出圈的观景点。',tip:'停车点到观景往返约2小时；计入当天驾驶与日照预算。'},{...northEastRoute[2],type:'drive',experience:'欧洲水量巨瀑',intro:'水量巨大的戴提瀑布，水雾与轰鸣构成北冰岛标志体验。',tip:'东岸/西岸观景台择一；地面湿滑，留足绕行后再接 Hverir。'},{...northEastRoute[3],type:'drive',experience:'硫磺地热原',intro:'纳马菲亚德硫磺地热区，彩土与蒸汽并存，紧邻米湖温泉。',tip:'步行观景即可；风大护目，泡汤前短停。'},{...northEastRoute[4],type:'drive',experience:'米湖天然温泉',intro:'比蓝湖更安静实惠的地热泡汤，适合收束长驾驶日。',tip:'可买学生票且通常不查证件；控制泡汤时长以便当晚入住。'},{...stays.myvatn,type:'drive'}]},
  {date:'10/3',flag:'🇮🇸',city:'胡萨维克',title:'胡萨维克观鲸',driveKm:320,driveHours:5,activityHours:11,transport:'上午 Goðafoss 短停后暂定 Gentle Giants 观鲸（海上约3小时，码头段整体预留约4小时）；下午西行约320 km / 5小时至 North West。',spot:'Fljótsbakki → Goðafoss 众神瀑布（约4 km）→ Húsavík Gentle Giants 观鲸 → 沿1号公路西行；当晚住 North West Restaurant & Guesthouse（9/30 17:00 前免费退）。',points:[{...stays.myvatn,name:'🇮🇸 Fljótsbakki 出发',type:'drive',experience:'观鲸日前置出发',intro:'从众神瀑布旁的农场酒店出发，上午节奏紧凑而顺。',tip:'先短停 Goðafoss 再北上；按船班倒推，出发前至少40分钟到售票中心。'},{name:'🇮🇸 Goðafoss 众神瀑布',lat:65.6828,lng:-17.5502,type:'drive',note:'马蹄形瀑布 · 短停',experience:'马蹄形众神瀑布',intro:'北部代表性马蹄形瀑布，两岸视角不同，短停性价比很高。',tip:'距住宿约4 km；观鲸前预留20–40分钟，注意湿滑与风。'},{name:'🇮🇸 Gentle Giants 观鲸 · Húsavík',lat:66.0463,lng:-17.3437,type:'drive',note:'暂定半天 · 海上约3小时',experience:'胡萨维克观鲸',official:'https://www.gentlegiants.is/',booking:true,intro:'从世界知名观鲸港出海，有机会近距离观察鲸鱼与海鸟。',tip:'Ticket Center（蓝色大旗）出发前至少40分钟到；GG1 海上约3小时，码头段预留约4小时。海况差可能晚回港，西行留缓冲。'},{...stays.northwest,type:'drive'}]},
- {date:'10/4',flag:'🇮🇸',city:'斯奈山半岛',title:'斯奈山半岛',driveKm:260,driveHours:4.5,activityHours:10,transport:'约260 km / 4.5小时；自 North West 进入斯奈山，当晚住半岛南岸。',spot:'Stykkishólmur → Ingjaldshóll、海岸与斯奈山远景；当晚住 Guesthouse Hof。',points:[{...stays.northwest,name:'🇮🇸 North West 出发',type:'drive'},{...baseIceland[13],type:'drive',experience:'彩色港镇与布雷扎湾',intro:'斯奈山北岸彩色港镇，港口步行可观察布雷扎湾与渔船日常。',tip:'白天短访；用港口步行舒缓长途驾驶后再续西岸。'},{...baseIceland[14],type:'drive'},{...stays.hof,type:'drive'}]},
+ {date:'10/4',flag:'🇮🇸',city:'斯奈山半岛',title:'斯奈山半岛',driveKm:260,driveHours:4.5,activityHours:10,transport:'约260 km / 4.5小时；自 North West 进入斯奈山，当晚住半岛南岸。',spot:'Stykkishólmur → Kirkjufell 草帽山 → Ingjaldshóll、海岸与斯奈山远景；当晚住 Guesthouse Hof。',points:[{...stays.northwest,name:'🇮🇸 North West 出发',type:'drive'},{...baseIceland[13],type:'drive',experience:'彩色港镇与布雷扎湾',intro:'斯奈山北岸彩色港镇，港口步行可观察布雷扎湾与渔船日常。',tip:'白天短访；用港口步行舒缓长途驾驶后再续西岸。'},{...kirkjufell,type:'drive'},{...baseIceland[14],type:'drive'},{...stays.hof,type:'drive'}]},
  {date:'10/5',flag:'🇮🇹',city:'米兰',title:'冰岛 → 米兰',driveKm:200,driveHours:3,activityHours:8,transport:'Guesthouse Hof 至KEF约200 km；15:30前还车，U23972 18:40起飞（BSGMTC）。',spot:'上午自斯奈山出发还车，从KEF飞米兰；00:25抵达马尔彭萨 T2。',points:[{...stays.hof,name:'🇮🇸 Guesthouse Hof 出发',type:'drive'},{...baseIceland[16],type:'drive'},{name:'米兰 MXP',lat:45.6306,lng:8.7281,type:'flight'},{...stays.milanAirport,type:'flight'}]},
  {date:'10/6',flag:'🇭🇰',city:'香港',title:'米兰 → 香港',driveKm:0,driveHours:0,activityHours:14,transport:'EY82 + EY870：11:40从MXP起飞，经阿布扎比中转。',spot:'机场酒店休息后返程。',points:[{name:'米兰 MXP',lat:45.6306,lng:8.7281,type:'flight'},{name:'阿布扎比 AUH',lat:24.453,lng:54.377,type:'flight',note:'中转1小时30分'},{name:'香港 HKG',lat:22.308,lng:113.9185,type:'flight'},{...stays.hongkong,type:'flight'}]}
 ];
@@ -250,8 +258,8 @@ const routeGroups=[
  {name:'🇮🇹 米兰',date:'10/6',lat:45.6306,lng:8.7281,type:'flight'}
 ];
 const fullIcelandRoute=[
- baseIceland[0],stays.reykjavik,baseIceland[2],baseIceland[3],baseIceland[4],baseIceland[5],stays.hvolsvollur,...highlandRoute,stays.hvolsvollur,...southCoastRoute,stays.vagnsstadir,
- baseIceland[8],baseIceland[9],baseIceland[10],stays.egilsstadir,...northEastRoute,stays.myvatn,baseIceland[12],stays.northwest,baseIceland[13],baseIceland[14],stays.hof,baseIceland[16]
+ baseIceland[0],stays.reykjavik,baseIceland[2],baseIceland[3],baseIceland[4],baseIceland[5],stays.hvolsvollur,...highlandRoute,stays.hvolsvollur,...southCoastRoute,stays.skaftafellHotel,stays.vagnsstadir,
+ baseIceland[8],baseIceland[9],baseIceland[10],stays.egilsstadir,...northEastRoute,stays.myvatn,baseIceland[12],stays.northwest,baseIceland[13],kirkjufell,baseIceland[14],stays.hof,baseIceland[16]
 ];
 let map,mainLayers=[],dayLayers=[],routeRequest=0,icelandPoints=fullIcelandRoute.map(p=>({...p}));
 const COLORS={drive:'#55d6a7',flight:'#63a8ff'};
@@ -317,11 +325,12 @@ const PLACE_DETAILS=[
  {match:'Hvolsvöllur',experience:'黄金圈与南岸门户镇',intro:'连接黄金圈收官、高地往返与南岸精华的南岸门户小镇。',tip:'连住 Hvolsvöllur 的 Airbnb 整套民居两晚（9/28—29）；减少搬家，方便高地早出晚归。',wiki:'Hvolsvöllur',official:'https://www.south.is/'},
  {match:'Seljalandsfoss',experience:'可走入后方的瀑布',intro:'步道可绕到水帘后方，近距离感受水雾包围，是南岸经典体验。',tip:'地面湿滑，穿防水外层与防滑鞋；停车后短停即可续行。',wiki:'Seljalandsfoss',official:'https://www.south.is/'},
  {match:'Skógafoss',experience:'巨大彩虹水幕',intro:'约60米高的南岸代表性瀑布，晴天水雾中常出现彩虹。',tip:'可登阶梯俯瞰；阶梯湿滑，风大时注意抓稳扶手。',wiki:'Skógafoss',official:'https://www.south.is/'},
- {match:'Loftsalahellir',experience:'海岸取景三角岩洞',intro:'Dyrhólaey 附近三角形洞口（尼康宣传片取景），可框取草地与海岸。',tip:'支路停车空间有限；到访即走，勿堵塞单车道。',wiki:'Loftsalahellir',official:'https://www.south.is/'},
+ {match:'Loftsalahellir',experience:'海岸取景三角岩洞',intro:'Dyrhólaey 附近三角形洞口（尼康宣传片取景），可框取草地与海岸。',tip:'支路停车空间有限；到访即走，勿堵塞单车道。',wiki:'Loftsalahellir',image:'../assets/places/loftsalahellir.jpg',imageCredit:'介绍图片：Pexels（免费图库）',official:'https://www.south.is/'},
  {match:'Reynisfjara',experience:'玄武岩黑沙滩',intro:'玄武岩柱与海蚀柱构成的南岸标志性黑沙滩，视觉冲击力极强。',tip:'疯狗浪风险高：远离浪线，服从现场警示灯，勿背海站立。',wiki:'Reynisfjara',official:'https://safetravel.is/'},
  {match:'Fjaðrárgljúfur',experience:'冰川切割峡谷',intro:'曲折河谷与陡峭岩壁并存，沿上缘步道即可获得连续观景。',tip:'上缘步道往返约2—3 km；以现场封闭标识为准，勿下到危险边缘。',wiki:'Fjaðrárgljúfur',official:'https://www.south.is/'},
  {match:'Múlagljúfur',experience:'高配版羽毛河峡谷',intro:'悬崖瀑布与冰川峡谷同框，评价极高的南岸深度徒步点。',tip:'往返约5.8 km / 约2小时；入口碎石路建议4WD，预留体力给次日冰川。',wiki:'Múlagljúfur',official:'https://www.visitvatnajokull.is/'},
  {match:'Vagnsstaðir',experience:'瓦特纳冰川乡野住宿',intro:'靠近瓦特纳冰川国家公园，方便衔接峡谷徒步与次日冰川活动。',tip:'衔接 Múlagljúfur 与次日 09:00 Skaftafell 集合；结束后再东行。',wiki:'Vatnajökull National Park',official:'https://www.vagnsstadir.is/'},
+ {match:'Hótel Skaftafell',experience:'冰川景区门口酒店',intro:'位于 Freysnes，紧邻 Skaftafell 游客中心，是次日冰川徒步集合最方便的住宿。',tip:'9/30 首选酒店；次日 09:00 Skaftafell Booking Center 集合，几乎无需赶路。',official:'https://www.hotelskaftafell.is/'},
  {match:'Skaftafell',experience:'冰川徒步核心区',intro:'瓦特纳冰川南缘门户，Glacier Explorer 可近距离走上冰原。',tip:'10/1 09:00 Booking Center 集合；约8 km、爬升约400 m、往返约5.5小时，须跟持证向导。',wiki:'Skaftafell',official:'https://adventures.is/iceland/day-tours/glacier-tours/glacier-tours-on-vatnajokull/glacier-explorer/'},
  {match:'钻石沙滩',experience:'浮冰黑沙海岸',intro:'杰古沙龙出海口旁，潮汐把透明浮冰推上黑沙滩，摄影辨识度极高。',tip:'冰川结束后东行途中短停；留意潮汐与湿滑冰块，勿靠近浪线。',wiki:'Diamond Beach (Iceland)',official:'https://www.vatnajokulsthjodgardur.is/en/areas/jokulsarlon'},
  {match:'Stokksnes',experience:'蝙蝠山海岸倒影',intro:'Vestrahorn 山脚私人海岸，黑沙、草丘与潮滩构成经典山海画面。',tip:'私人场地通常需现场缴费；东行去 Egilsstaðir 途中可安排短停。',wiki:'Vestrahorn',official:'https://www.visitvatnajokull.is/'},
@@ -338,6 +347,7 @@ const PLACE_DETAILS=[
  {match:'Gentle Giants',experience:'胡萨维克观鲸',intro:'从世界知名观鲸港出海，有机会近距离观察鲸鱼与海鸟。',tip:'出发前至少40分钟到 Ticket Center（蓝色大旗）；GG1 海上约3小时，码头段预留约4小时。',wiki:'Húsavík',official:'https://www.gentlegiants.is/',booking:true},
  {match:'Goðafoss',experience:'马蹄形众神瀑布',intro:'北部代表性马蹄形瀑布，两岸视角不同，短停性价比很高。',tip:'距 Fljótsbakki 约4 km；观鲸前预留20–40分钟，注意湿滑与风。',wiki:'Goðafoss',official:'https://www.northiceland.is/'},
  {match:'North West',experience:'1号公路西北岸住宿',intro:'位于西北岸干线旁，衔接北部西行与次日斯奈山半岛。',tip:'Víðigerði, 531；10/3 晚入住，9/30 17:00 前可免费取消。',wiki:'Hvammstangi',official:'https://www.nwest.is/'},
+ {match:'Kirkjufell',experience:'草帽山与瀑布同框',intro:'斯奈山半岛北岸标志性锥形山峰，与前景 Kirkjufellsfoss 瀑布构成冰岛最经典的取景组合之一。',tip:'10/4 白天短停；停车场就在 54 号公路旁，黄昏光线层次最好。',wiki:'Kirkjufell',official:'https://www.west.is/'},
  {match:'Stykkishólmur',experience:'彩色港镇与布雷扎湾',intro:'斯奈山北岸彩色港镇，港口步行可观察布雷扎湾与渔船日常。',tip:'10/4 白天短访；用港口步行舒缓长途驾驶后再续西岸。',wiki:'Stykkishólmur',official:'https://www.west.is/'},
  {match:'Ingjaldshóll',experience:'教堂与冰川远景',intro:'半岛西端历史教堂所在地，天气好时可远眺冰川与荒原海岸。',tip:'天气合适再停；风大或低云时不必勉强久留。',wiki:'Ingjaldshóll',official:'https://www.west.is/'},
  {match:'Guesthouse Hof',experience:'斯奈山南岸临海住宿',intro:'临海乡野住宿，靠近斯奈山冰川与南岸海岸线，适合环岛收官夜。',tip:'Hofgarðar, 356；10/4 入住，次日上午出发还车飞米兰。',wiki:'Snæfellsnes',official:'https://www.gistihof.is/en/start.html'},
@@ -380,7 +390,7 @@ function stayAddress(p){
  if(/住宿|过夜|待定|中转|抵达|休整|小镇|港镇/.test(note)&&!/\d/.test(note))return '';
  return note.replace(/^地址[:：]\s*/,'');
 }
-function isOvernightPoint(day,index){return index===day.points.length-1&&!!day.points[index].stay}
+function isOvernightPoint(day,index){const p=day.points[index];return !!p&&!!p.stay&&(index===day.points.length-1||!!p.candidate)}
 function syncMapHeight(){
  const layout=document.querySelector('.map-layout'),mapEl=document.getElementById('map'),mapCard=document.querySelector('.map-card'),aside=document.querySelector('.summary-panel');
  if(!layout||!mapEl||!mapCard||!aside)return;
@@ -472,7 +482,7 @@ function applyPlaceImage(marker,p,src){
  box.style.display='';
  box.innerHTML=`<img src="${src}" alt="${escapeHtml(pointName(p))}">`;
  const img=box.querySelector('img');if(img)img.addEventListener('error',()=>{box.style.display='none'});
- root.querySelector('.place-image-credit').textContent='介绍图片：Wikipedia / Wikimedia Commons';
+ root.querySelector('.place-image-credit').textContent=placeDetail(p).imageCredit||'介绍图片：Wikipedia / Wikimedia Commons';
 }
 function placeImageCacheKey(detail){return detail.commons||detail.image||detail.wiki||''}
 async function fetchCommonsThumb(fileTitle){
@@ -518,20 +528,23 @@ async function hydratePlaceImage(marker,p){
   PLACE_IMAGE_CACHE.set(cacheKey,src||'');applyPlaceImage(marker,p,src);
  }catch(e){PLACE_IMAGE_CACHE.set(cacheKey,'')}
 }
+function pinnedPopupOpen(){
+ return mainLayers.concat(dayLayers).some(l=>l&&l.isPopupOpen&&l.isPopupOpen()&&l._popupPinned);
+}
 function schedulePopupClose(marker){
  clearTimeout(marker._closeTimer);
- marker._closeTimer=setTimeout(()=>{if(!marker._popupPinned&&!marker._popupHovered)marker.closePopup()},260);
+ marker._closeTimer=setTimeout(()=>{if(!marker._popupPinned&&!marker._popupHovered)marker.closePopup()},800);
 }
 function bindPopupHover(marker){
  const popup=marker.getPopup(),el=popup&&popup.getElement();
  if(!el||el._hoverBound)return;
  el._hoverBound='1';
- el.addEventListener('mouseenter',()=>{marker._popupHovered=true;clearTimeout(marker._closeTimer)});
+ el.addEventListener('mouseenter',()=>{marker._popupHovered=true;clearTimeout(marker._closeTimer);if(el.querySelector('.popup-carousel'))marker._popupPinned=true});
  el.addEventListener('mouseleave',()=>{marker._popupHovered=false;schedulePopupClose(marker)});
 }
 function addMarker(p,i,type='drive',large=false,target=mainLayers){
  const m=L.marker([p.lat,p.lng],{icon:icon(type,i+1,large,!!p.airbnb)}).bindPopup(placePopup(p),{maxWidth:300}).addTo(map);
- m.on('popupopen',()=>{hydratePlaceImage(m,p);bindPopupHover(m)});m.on('mouseover',()=>{clearTimeout(m._closeTimer);m.openPopup()});m.on('mouseout',()=>schedulePopupClose(m));m.on('click',()=>{m._popupPinned=true;m.openPopup()});m.on('popupclose',()=>{m._popupPinned=false;m._popupHovered=false});
+ m.on('popupopen',()=>{hydratePlaceImage(m,p);bindPopupHover(m)});m.on('mouseover',()=>{clearTimeout(m._closeTimer);if(!m.isPopupOpen()&&!pinnedPopupOpen())m.openPopup()});m.on('mouseout',()=>schedulePopupClose(m));m.on('click',()=>{m._popupPinned=true;if(!m.isPopupOpen())m.openPopup()});m.on('popupclose',()=>{m._popupPinned=false;m._popupHovered=false});
  target.push(m);return m;
 }
 async function drawActualRoadRoute(points=icelandPoints){
@@ -558,8 +571,8 @@ function renderRoute(){
 function renderRouteList(){
  const list=document.getElementById('routeList');
  list.innerHTML=days.map((d,i)=>{
-  const city=`${d.flag?`${d.flag} `:''}${d.city||d.title}`;
-  return `<button type="button" class="route-node route-day-node" data-day="${i}" style="--day:${DAY_COLORS[i]}"><i>D${i+1}</i><span><b>${escapeHtml(city)}</b><em>${escapeHtml(d.date)}</em></span></button>`;
+  const theme=`${d.flag?`${d.flag} `:''}${d.title||d.city}`;
+  return `<button type="button" class="route-node route-day-node" data-day="${i}" style="--day:${DAY_COLORS[i]}"><i>D${i+1}</i><span><b>${escapeHtml(theme)}</b><em>${escapeHtml(d.date)}</em></span></button>`;
  }).join('');
  list.querySelectorAll('.route-day-node').forEach(btn=>btn.addEventListener('click',()=>selectDay(+btn.dataset.day)));
 }
@@ -733,10 +746,10 @@ function renderExperienceList(day,markers){
   const stay=isOvernightPoint(day,i);
   const select=()=>{
    list.querySelectorAll('.experience-place').forEach(el=>el.classList.toggle('active',el===item));
-   marker._popupPinned=true;marker.openPopup();
+   marker._popupPinned=true;if(!marker.isPopupOpen())marker.openPopup();
    requestAnimationFrame(()=>alignMarkerToListItem(marker,item));
   };
-  item.addEventListener('mouseenter',()=>{clearTimeout(marker._closeTimer);if(!marker._popupPinned)marker.openPopup()});
+  item.addEventListener('mouseenter',()=>{clearTimeout(marker._closeTimer);if(!marker._popupPinned&&!marker.isPopupOpen()&&!pinnedPopupOpen())marker.openPopup()});
   item.addEventListener('mouseleave',()=>schedulePopupClose(marker));
   item.addEventListener('focus',select);
   item.addEventListener('click',select);
@@ -759,6 +772,12 @@ function renderDriveIntensity(day,index){
   <div><div class="drive-stat-head"><b>${km} km</b></div><div class="drive-bar"><i style="width:${Math.min(100,km/maxKm*100)}%"></i></div></div>
   <div><div class="drive-stat-head"><b>${hours?`${hours} 小时`:'0 小时'}</b><span>${ratio}%</span></div><div class="drive-bar time"><i style="width:${ratio}%"></i></div></div>
   ${hours?'':'<div class="drive-delta">当天无自驾，以航班衔接和休整为主。</div>'}`;
+}
+function renderDayNav(index){
+ const el=document.getElementById('dayNav');if(!el)return;
+ const prev=days[index-1],next=days[index+1];
+ el.innerHTML=`<button type="button" class="btn day-nav-btn" data-dir="-1"${prev?'':' disabled'}>${prev?`‹ D${index} ${prev.date}`:'‹ 前一天'}</button><button type="button" class="btn day-nav-btn" data-dir="1"${next?'':' disabled'}>${next?`D${index+2} ${next.date} ›`:'后一天 ›'}</button>`;
+ el.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;selectDay(index+(+b.dataset.dir))}));
 }
 function renderRouteDecisions(index){
  const el=document.getElementById('dayRouteDecisions'),options=DAY_ROUTE_OPTIONS[index];
@@ -785,7 +804,7 @@ function selectDay(index){
   const markerType=isOvernightPoint(d,i)?'stay':p.type;
   return addMarker(p,i,markerType,true,dayLayers);
  });
- renderDriveIntensity(d,index);renderExperienceList(d,markers);renderRouteDecisions(index);
+ renderDriveIntensity(d,index);renderExperienceList(d,markers);renderRouteDecisions(index);renderDayNav(index);
  const neighborIndexes=[index-1,index+1].filter(i=>i>=0&&i<days.length);
  neighborIndexes.forEach(i=>{
   drawDayRoadRoute(days[i],i,{dimmed:true,requestId});
